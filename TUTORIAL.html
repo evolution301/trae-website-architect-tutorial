@@ -1,0 +1,1299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站架构设计完整教程 - Trae 交互式指南</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-body: #0B1120;
+            --bg-sidebar: rgba(11, 17, 32, 0.95);
+            --bg-card: #151e32;
+            --bg-code: #0f1623;
+            --bg-chat-user: rgba(59, 130, 246, 0.15);
+            --bg-chat-ai: rgba(30, 41, 59, 0.6);
+            
+            --primary: #3b82f6;
+            --secondary: #eab308;
+            --accent: #8b5cf6;
+            --trae-gradient: linear-gradient(135deg, #6366f1, #a855f7);
+            
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            
+            --text-main: #f1f5f9;
+            --text-muted: #94a3b8;
+            --text-code: #e2e8f0;
+            
+            --border: #1e293b;
+            --sidebar-width: 280px;
+            --radius-md: 8px;
+            --radius-lg: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.7;
+            background-image: 
+                radial-gradient(circle at 0% 0%, rgba(59, 130, 246, 0.08), transparent 40%),
+                radial-gradient(circle at 100% 100%, rgba(168, 85, 247, 0.08), transparent 40%);
+            background-attachment: fixed;
+            scroll-behavior: smooth;
+        }
+
+        .app-layout {
+            display: grid;
+            grid-template-columns: var(--sidebar-width) 1fr;
+            min-height: 100vh;
+        }
+
+        aside.sidebar {
+            position: fixed;
+            width: var(--sidebar-width);
+            height: 100vh;
+            background: var(--bg-sidebar);
+            border-right: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            padding: 24px 16px;
+            overflow-y: auto;
+            z-index: 100;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 32px;
+            color: var(--text-main);
+            padding-left: 12px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+        
+        .logo span {
+            background: var(--trae-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-group h3 {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            letter-spacing: 0.1em;
+            margin: 24px 0 10px 12px;
+            font-weight: 600;
+            opacity: 0.8;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 12px;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s;
+            margin-bottom: 4px;
+            border-left: 3px solid transparent;
+        }
+
+        .nav-item svg { width: 18px; height: 18px; opacity: 0.7; }
+
+        .nav-item:hover {
+            color: var(--text-main);
+            background: rgba(255,255,255,0.03);
+        }
+
+        .nav-item.active {
+            color: var(--text-main);
+            background: rgba(99, 102, 241, 0.1);
+            border-left-color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .nav-item.active svg { opacity: 1; color: var(--accent); }
+
+        main.content {
+            grid-column: 2;
+            padding: 60px 80px;
+            max-width: 1100px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        header.page-header {
+            margin-bottom: 60px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .badge-group { margin-bottom: 16px; display: flex; gap: 10px; align-items: center; }
+        .badge { 
+            font-size: 0.75rem; padding: 4px 10px; border-radius: 20px; font-weight: 600; letter-spacing: 0.05em; 
+            border: 1px solid transparent;
+        }
+        .badge.trae { color: white; background: var(--trae-gradient); border: none; }
+        .badge.skill { color: #60a5fa; background: rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); }
+        .badge.rule { color: #facc15; background: rgba(234, 179, 8, 0.1); border-color: rgba(234, 179, 8, 0.2); }
+
+        header h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            color: var(--text-main);
+        }
+
+        header p {
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            max-width: 800px;
+        }
+
+        .ai-chat-box {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .ai-chat-box::before {
+            content: "Trae Chat Context";
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            background: var(--bg-body);
+            padding: 0 10px;
+            font-size: 0.75rem;
+            color: var(--accent);
+            font-weight: 600;
+            letter-spacing: 0.05em;
+        }
+
+        .chat-message {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 16px;
+        }
+
+        .avatar {
+            width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 0.9rem;
+        }
+        
+        .avatar.user { background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border); }
+        .avatar.ai { background: var(--trae-gradient); color: white; box-shadow: 0 0 15px rgba(139, 92, 246, 0.3); }
+
+        .message-content {
+            flex: 1;
+            font-size: 0.95rem;
+            padding: 12px 16px;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .chat-message.user .message-content {
+            background: var(--bg-chat-user);
+            color: var(--text-main);
+            border-top-left-radius: 2px;
+        }
+        
+        .chat-message.ai .message-content {
+            background: var(--bg-chat-ai);
+            color: var(--text-muted);
+            border: 1px solid var(--border);
+            border-top-left-radius: 2px;
+        }
+
+        .prompt-label {
+            display: block; font-size: 0.7rem; text-transform: uppercase; 
+            margin-bottom: 6px; opacity: 0.6; letter-spacing: 0.05em;
+        }
+
+        .copy-prompt {
+            float: right; font-size: 0.75rem; color: var(--primary); 
+            cursor: pointer; opacity: 0.8; transition: opacity 0.2s;
+        }
+        .copy-prompt:hover { opacity: 1; text-decoration: underline; }
+
+        .code-window {
+            background: var(--bg-code);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            margin: 0 0 40px 52px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px -10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .code-header {
+            background: rgba(255,255,255,0.02);
+            padding: 10px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .window-controls { display: flex; gap: 8px; }
+        .dot { width: 10px; height: 10px; border-radius: 50%; }
+        .red { background: #ff5f56; } .yellow { background: #ffbd2e; } .green { background: #27c93f; }
+
+        .lang-tag {
+            font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: var(--text-muted);
+            background: rgba(255,255,255,0.05); padding: 2px 8px; border-radius: 4px;
+        }
+
+        pre { padding: 20px; overflow-x: auto; margin: 0; }
+        code { font-family: 'JetBrains Mono', monospace; font-size: 0.9rem; color: var(--text-code); line-height: 1.6; }
+        
+        h2 { font-size: 1.8rem; margin-bottom: 30px; font-weight: 700; color: var(--text-main); display: flex; align-items: center; gap: 12px; }
+        h2 svg { color: var(--accent); }
+        h3 { font-size: 1.3rem; margin-top: 40px; margin-bottom: 20px; color: var(--text-main); font-weight: 600; }
+        h4 { font-size: 1.1rem; margin-top: 30px; margin-bottom: 15px; color: var(--text-main); font-weight: 600; }
+        p { color: var(--text-muted); margin-bottom: 16px; font-size: 1.05rem; }
+        a { color: var(--primary); text-decoration: none; border-bottom: 1px dashed rgba(59, 130, 246, 0.5); }
+
+        .callout {
+            padding: 20px; border-radius: var(--radius-md); margin: 32px 0; border-left: 4px solid;
+            background: rgba(255,255,255,0.02); display: flex; gap: 16px;
+        }
+        .callout-icon { flex-shrink: 0; width: 24px; height: 24px; margin-top: 2px; }
+        .callout.info { border-color: var(--primary); background: rgba(59, 130, 246, 0.05); }
+        .callout.info .callout-icon { color: var(--primary); }
+        .callout.warning { border-color: var(--warning); background: rgba(245, 158, 11, 0.05); }
+        .callout.warning .callout-icon { color: var(--warning); }
+        .callout.success { border-color: var(--success); background: rgba(16, 185, 129, 0.05); }
+        .callout.success .callout-icon { color: var(--success); }
+        
+        ul.checklist { list-style: none; padding: 0; }
+        ul.checklist li {
+            position: relative; padding: 12px 0 12px 34px; border-bottom: 1px solid rgba(255,255,255,0.03); color: var(--text-muted);
+        }
+        ul.checklist li::before {
+            content: "✓"; position: absolute; left: 0; top: 16px; width: 20px; height: 20px; 
+            background: rgba(16, 185, 129, 0.15); color: var(--success); border-radius: 50%; 
+            display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold;
+        }
+
+        .timeline { position: relative; margin: 40px 0; padding-left: 20px; border-left: 2px solid var(--border); }
+        .step-item { position: relative; padding-left: 40px; margin-bottom: 60px; }
+        .step-marker {
+            position: absolute; left: -29px; top: 0;
+            width: 16px; height: 16px;
+            background: var(--bg-body); border: 2px solid var(--primary);
+            border-radius: 50%; box-shadow: 0 0 0 6px var(--bg-body);
+        }
+        .step-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+        .step-number { font-family: 'JetBrains Mono'; color: var(--primary); font-weight: 700; opacity: 0.8; }
+        .step-title { font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin: 0; }
+
+        .grid-features { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 24px; }
+        .feature-box {
+            background: var(--bg-card); padding: 30px; border-radius: var(--radius-lg);
+            border: 1px solid var(--border); transition: all 0.3s ease; position: relative; overflow: hidden;
+        }
+        .feature-box:hover { transform: translateY(-5px); border-color: var(--border); box-shadow: 0 20px 40px rgba(0,0,0,0.2); }
+        .feature-icon { 
+            width: 48px; height: 48px; background: rgba(255,255,255,0.05); border-radius: 12px;
+            display: flex; align-items: center; justify-content: center; margin-bottom: 20px; color: var(--text-main);
+        }
+
+        .progress-wrapper { margin-bottom: 24px; }
+        .progress-bar {
+            height: 8px; background: var(--border); border-radius: 4px; overflow: hidden; margin: 8px 0;
+        }
+        .progress-fill {
+            height: 100%; background: var(--trae-gradient);
+            border-radius: 4px;
+        }
+        .progress-label { font-size: 0.85rem; color: var(--text-code); font-weight: 500; }
+
+        footer {
+            margin-top: 100px; padding: 40px 0; border-top: 1px solid var(--border);
+            text-align: center; color: var(--text-muted); font-size: 0.9rem;
+        }
+
+        @media (max-width: 1024px) {
+            .app-layout { grid-template-columns: 1fr; }
+            aside.sidebar { display: none; }
+            main.content { padding: 40px 20px; }
+            .code-window { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="app-layout">
+    <aside class="sidebar">
+        <div class="logo">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            <span>Website Architect <small style="font-weight:400; opacity:0.6; font-size:0.7em">for Trae</small></span>
+        </div>
+
+        <nav>
+            <div class="nav-group">
+                <h3>快速开始</h3>
+                <a href="#overview" class="nav-item active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9 17.14 14.14 22 15.09 15.09 22 12 18.91 9.91 22 6.86 17.14 9 22 2 12 9 8.26 2 12 2z"/></svg>
+                    教程概览
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <h3>基础配置</h3>
+                <a href="#skill" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 13 10 17 8 17"/></svg>
+                    创建 SKILL
+                </a>
+                <a href="#rules" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 13 10 17 8 17"/></svg>
+                    创建规则
+                </a>
+                <a href="#wp" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>
+                    绑定 WordPress
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <h3>设计系统</h3>
+                <a href="#colors" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
+                    颜色系统
+                </a>
+                <a href="#fonts" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="9" y2="4"/><line x1="15" y1="20" x2="15" y2="4"/><line x1="9" y1="14" x2="15" y2="14"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="9" y1="10" x2="15" y2="10"/></svg>
+                    字体系统
+                </a>
+                <a href="#global" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                    全局组件
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <h3>实战流程</h3>
+                <a href="#workflow" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 23 2 17 7"/></svg>
+                    完整工作流
+                </a>
+                <a href="#chat" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                    对话示例
+                </a>
+            </div>
+
+            <div class="nav-group">
+                <h3>常见问题</h3>
+                <a href="#faq" class="nav-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                    FAQ
+                </a>
+            </div>
+        </nav>
+    </aside>
+
+    <main class="content">
+        <header class="page-header">
+            <div class="badge-group">
+                <span class="badge trae">AI NATIVE</span>
+                <span class="badge skill">SKILL SYSTEM</span>
+                <span class="badge rule">RULES</span>
+            </div>
+            <h1>
+                网站架构设计完整教程
+            </h1>
+            <p>从零开始，教你如何使用 Trae 创建自定义 SKILL、配置规则、绑定 WordPress，并建立完整的设计系统。小白也能轻松上手！</p>
+        </header>
+
+        <section id="overview">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9 17.14 14.14 22 15.09 15.09 22 12 18.91 9.91 22 6.86 17.14 9 22 2 12 9 8.26 2 12 2z"/></svg>
+                教程概览
+            </h2>
+
+            <div class="grid-features">
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 13 10 17 8 17"/></svg>
+                    </div>
+                    <h4>🧠 创建 SKILL</h4>
+                    <p>定义 AI 的专业能力，让 Trae 按照你的工作流程执行任务。</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9.33 8.67l-1.66-1.25"/><path d="M14.67 8.67l1.66-1.25"/></svg>
+                    </div>
+                    <h4>📋 创建规则</h4>
+                    <p>建立项目规范，确保 AI 生成的代码符合你的设计标准。</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>
+                    </div>
+                    <h4>🔗 绑定 WordPress</h4>
+                    <p>配置 WP 环境变量，让 AI 能够直接操作你的网站。</p>
+                </div>
+                <div class="feature-box">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
+                    </div>
+                    <h4>🎨 设计系统</h4>
+                    <p>定义颜色、字体、全局组件，建立统一的视觉语言。</p>
+                </div>
+            </div>
+
+            <div class="callout success">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-20 0v-1a10 10 0 1 0 20 0z"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>学习目标</strong>
+                    <p>完成本教程后，你将能够：创建自定义 SKILL、配置项目规则、绑定 WordPress、建立设计系统，并通过对话让 AI 自动生成符合规范的网站代码。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skill">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 13 10 17 8 17"/></svg>
+                第一步：创建 SKILL
+            </h2>
+
+            <div class="callout info">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>什么是 SKILL？</strong>
+                    <p>SKILL 是 Trae 的"插件系统"，你可以定义 AI 的专业能力、工作流程和输出格式。创建 SKILL 后，AI 会自动按照你定义的规则执行任务。</p>
+                </div>
+            </div>
+
+            <h3>SKILL 文件结构</h3>
+            <p>每个 SKILL 都是一个独立的文件夹，包含一个 <code>SKILL.md</code> 文件。文件使用 Markdown 格式，包含以下部分：</p>
+
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">SKILL.md</span>
+                </div>
+                <pre><code>---
+name: my-custom-skill
+description: A brief description of what this skill does
+version: 1.0.0
+author: Your Name
+---
+
+# Skill Name
+
+## Description
+Explain what this skill does in detail.
+
+## When to Use
+Describe the scenarios where this skill should be invoked.
+
+## Workflow
+1. Step 1
+2. Step 2
+3. Step 3
+
+## Output Format
+Describe the expected output format.
+
+## Examples
+Provide example prompts and responses.</code></pre>
+            </div>
+
+            <h3>创建你的第一个 SKILL</h3>
+            <p>让我们创建一个简单的 SKILL，用于生成符合 B2B 风格的产品描述：</p>
+
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我创建一个 SKILL，名称为 "b2b-product-writer"，功能是生成 B2B 产品描述。要求：1. 使用专业商务语言 2. 包含产品规格 3. 突出核心卖点 4. 字数控制在 200-300 字。
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout warning">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-2.86 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div class="callout-content">
+                    <strong>重要提示</strong>
+                    <p>SKILL 文件必须放在 <code>.trae/skills/</code> 目录下，Trae 才能识别。建议每个 SKILL 单独一个文件夹，便于管理。</p>
+                </div>
+            </div>
+
+            <h3>SKILL 目录结构示例</h3>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">DIRECTORY</span>
+                </div>
+                <pre><code>.trae/
+└── skills/
+    ├── b2b-product-writer/
+    │   └── SKILL.md
+    ├── seo-content-writer/
+    │   └── SKILL.md
+    └── ui-ux-pro-max/
+        └── SKILL.md</code></pre>
+            </div>
+        </section>
+
+        <section id="rules">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 13 10 17 8 17"/></svg>
+                第二步：创建规则
+            </h2>
+
+            <div class="callout info">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>什么是规则？</strong>
+                    <p>规则文件定义了项目的编码标准、设计规范、SEO 要求等。AI 在生成代码时会自动读取这些规则，确保输出符合你的项目标准。</p>
+                </div>
+            </div>
+
+            <h3>规则文件命名规范</h3>
+            <p>规则文件使用数字前缀命名，便于排序和识别：</p>
+            <ul class="checklist">
+                <li><strong>01-</strong> 全局规则（语言、编码规范）</li>
+                <li><strong>02-</strong> 设计系统（颜色、字体、间距）</li>
+                <li><strong>03-</strong> 布局规范（网格、响应式）</li>
+                <li><strong>04-</strong> 组件规范（按钮、卡片、表单）</li>
+                <li><strong>05-</strong> SEO 规范（元数据、结构化数据）</li>
+                <li><strong>06-</strong> 业务规则（品牌信息、CTA 策略）</li>
+            </ul>
+
+            <h3>创建颜色系统规则</h3>
+            <p>让我们创建一个颜色系统规则文件：</p>
+
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我创建一个颜色系统规则文件，命名为 "03-color-system.md"。要求：1. 定义 CSS 变量 2. 包含主色、辅助色、背景色、文字色 3. 提供使用示例 4. 包含深色模式支持。
+                    </div>
+                </div>
+            </div>
+
+            <h3>规则文件示例</h3>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">03-color-system.md</span>
+                </div>
+                <pre><code># Color System
+
+## CSS Variables
+```css
+:root {
+    --primary: #3b82f6;
+    --secondary: #6366f1;
+    --accent: #8b5cf6;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --danger: #ef4444;
+    
+    --bg-body: #ffffff;
+    --bg-card: #f9fafb;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+    --border: #e5e7eb;
+}
+
+[data-theme="dark"] {
+    --bg-body: #0f172a;
+    --bg-card: #1e293b;
+    --text-main: #f1f5f9;
+    --text-muted: #94a3b8;
+    --border: #334155;
+}
+```
+
+## Usage Guidelines
+- Use `--primary` for main CTAs and important actions
+- Use `--secondary` for secondary actions
+- Use `--accent` for highlights and special elements
+- Always use CSS variables, never hardcode colors</code></pre>
+            </div>
+
+            <div class="callout success">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-20 0v-1a10 10 0 1 0 20 0z"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>规则文件位置</strong>
+                    <p>所有规则文件必须放在 <code>.trae/rules/</code> 目录下。Trae 会自动读取这些规则，并在生成代码时应用。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="wp">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" x2="12" y1="22.08" y2="12"/></svg>
+                第三步：绑定 WordPress
+            </h2>
+
+            <div class="callout info">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>为什么要绑定 WordPress？</strong>
+                    <p>绑定 WordPress 后，AI 可以直接读取你的网站数据、上传图片、创建页面，实现真正的自动化开发流程。</p>
+                </div>
+            </div>
+
+            <h3>创建环境变量文件</h3>
+            <p>在项目根目录创建 <code>.env</code> 文件，存储 WordPress 连接信息：</p>
+
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">.env</span>
+                </div>
+                <pre><code># WordPress Configuration
+WP_URL=https://your-site.com
+WP_USERNAME=your-username
+WP_PASSWORD=your-application-password
+WP_API_KEY=your-rest-api-key
+
+# Optional: Custom Post Type
+WP_POST_TYPE=page
+
+# Optional: Custom Taxonomy
+WP_TAXONOMY=category</code></pre>
+            </div>
+
+            <h3>获取 WordPress 凭证</h3>
+            <div class="timeline">
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">登录 WordPress 后台</h3>
+                    </div>
+                    <p>访问 <code>https://your-site.com/wp-admin</code> 并登录</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">生成应用密码</h3>
+                    </div>
+                    <p>进入 <strong>用户 → 个人资料</strong>，滚动到"应用密码"部分，点击"创建新应用密码"</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">复制密码到 .env</h3>
+                    </div>
+                    <p>将生成的密码复制到 <code>.env</code> 文件的 <code>WP_PASSWORD</code> 字段</p>
+                </div>
+            </div>
+
+            <div class="callout warning">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-2.86 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div class="callout-content">
+                    <strong>安全提示</strong>
+                    <p><strong>不要</strong>使用你的 WordPress 登录密码！必须使用应用密码。应用密码可以随时撤销，更加安全。同时，<code>.env</code> 文件应该添加到 <code>.gitignore</code>，避免泄露。</p>
+                </div>
+            </div>
+
+            <h3>测试 WordPress 连接</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请测试一下我的 WordPress 连接是否正常。使用 .env 文件中的配置，尝试获取最新的 5 篇文章列表。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="colors">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83M16.62 12l-5.74 9.94"/></svg>
+                第四步：设定颜色系统
+            </h2>
+
+            <div class="callout info">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>为什么需要颜色系统？</strong>
+                    <p>统一的颜色系统确保品牌一致性，提高开发效率，便于主题切换（如深色模式）。</p>
+                </div>
+            </div>
+
+            <h3>定义颜色变量</h3>
+            <p>在规则文件中定义完整的颜色系统：</p>
+
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">CSS VARIABLES</span>
+                </div>
+                <pre><code>:root {
+    /* Brand Colors */
+    --brand-primary: #2563eb;
+    --brand-secondary: #4f46e5;
+    --brand-accent: #7c3aed;
+    
+    /* Semantic Colors */
+    --color-success: #10b981;
+    --color-warning: #f59e0b;
+    --color-error: #ef4444;
+    --color-info: #3b82f6;
+    
+    /* Neutral Colors */
+    --color-white: #ffffff;
+    --color-gray-50: #f9fafb;
+    --color-gray-100: #f3f4f6;
+    --color-gray-200: #e5e7eb;
+    --color-gray-300: #d1d5db;
+    --color-gray-400: #9ca3af;
+    --color-gray-500: #6b7280;
+    --color-gray-600: #4b5563;
+    --color-gray-700: #374151;
+    --color-gray-800: #1f2937;
+    --color-gray-900: #111827;
+    
+    /* Background Colors */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f9fafb;
+    --bg-tertiary: #f3f4f6;
+    
+    /* Text Colors */
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --text-tertiary: #6b7280;
+    --text-inverse: #ffffff;
+    
+    /* Border Colors */
+    --border-light: #e5e7eb;
+    --border-medium: #d1d5db;
+    --border-dark: #9ca3af;
+}</code></pre>
+            </div>
+
+            <h3>深色模式支持</h3>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">DARK MODE</span>
+                </div>
+                <pre><code>[data-theme="dark"] {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
+    
+    --border-light: #334155;
+    --border-medium: #475569;
+    --border-dark: #64748b;
+}</code></pre>
+            </div>
+
+            <h3>让 AI 使用你的颜色系统</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我创建一个产品卡片组件。要求：1. 使用我定义的颜色变量（--bg-primary, --text-primary, --border-light）2. 卡片有 hover 效果 3. 包含产品图片、标题、价格、购买按钮。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="fonts">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 7 4 4 20 4 20 7"/><line x1="9" y1="20" x2="9" y2="4"/><line x1="15" y1="20" x2="15" y2="4"/><line x1="9" y1="14" x2="15" y2="14"/><line x1="9" y1="18" x2="15" y2="18"/><line x1="9" y1="10" x2="15" y2="10"/></svg>
+                第五步：设定字体系统
+            </h2>
+
+            <div class="callout info">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>字体系统的重要性</strong>
+                    <p>统一的字体系统提升可读性，建立品牌识别，确保跨平台一致性。</p>
+                </div>
+            </div>
+
+            <h3>定义字体变量</h3>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">FONT VARIABLES</span>
+                </div>
+                <pre><code>:root {
+    /* Font Families */
+    --font-display: 'Playfair Display', Georgia, serif;
+    --font-heading: 'Inter', -apple-system, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+    
+    /* Font Sizes */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
+    
+    /* Font Weights */
+    --font-light: 300;
+    --font-normal: 400;
+    --font-medium: 500;
+    --font-semibold: 600;
+    --font-bold: 700;
+    --font-extrabold: 800;
+    
+    /* Line Heights */
+    --leading-tight: 1.25;
+    --leading-normal: 1.5;
+    --leading-relaxed: 1.75;
+    
+    /* Letter Spacing */
+    --tracking-tight: -0.025em;
+    --tracking-normal: 0;
+    --tracking-wide: 0.025em;
+}</code></pre>
+            </div>
+
+            <h3>字体使用规范</h3>
+            <ul class="checklist">
+                <li><strong>Display Font:</strong> 用于大标题、Hero 区域</li>
+                <li><strong>Heading Font:</strong> 用于 H1-H6 标题</li>
+                <li><strong>Body Font:</strong> 用于正文、段落</li>
+                <li><strong>Mono Font:</strong> 用于代码、数据、技术内容</li>
+            </ul>
+
+            <h3>导入 Google Fonts</h3>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">HTML</span>
+                </div>
+                <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"&gt;</code></pre>
+            </div>
+        </section>
+
+        <section id="global">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+                第六步：全局组件
+            </h2>
+
+            <div class="callout info">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>全局组件的作用</strong>
+                    <p>全局组件（Header、Footer）在所有页面共享，确保导航一致性，减少重复代码，便于统一维护。</p>
+                </div>
+            </div>
+
+            <h3>全局组件目录结构</h3>
+            <div class="code-window">
+                <div class="code-header">
+                    <div class="window-controls"><div class="dot red"></div><div class="dot yellow"></div><div class="dot green"></div></div>
+                    <span class="lang-tag">DIRECTORY</span>
+                </div>
+                <pre><code>website/
+├── global/
+│   ├── header.html
+│   ├── footer.html
+│   └── styles.css
+└── pages/
+    ├── home/
+    ├── about/
+    └── contact/</code></pre>
+            </div>
+
+            <h3>创建全局 Header</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我创建一个全局 Header 组件。要求：1. 包含 Logo、导航菜单、CTA 按钮 2. 响应式设计（移动端汉堡菜单）3. 使用我定义的颜色和字体变量 4. 滚动时添加阴影效果。
+                    </div>
+                </div>
+            </div>
+
+            <h3>创建全局 Footer</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我创建一个全局 Footer 组件。要求：1. 包含公司信息、快速链接、社交媒体图标 2. 4 列布局 3. 使用我定义的颜色和字体变量 4. 包含版权信息。
+                    </div>
+                </div>
+            </div>
+
+            <div class="callout success">
+                <div class="callout-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-20 0v-1a10 10 0 1 0 20 0z"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+                </div>
+                <div class="callout-content">
+                    <strong>全局组件规范</strong>
+                    <p>全局组件应该放在 <code>website/global/</code> 目录下，所有页面通过 include 或引用的方式使用。确保只修改颜色变量，不改变结构和 ID。</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="workflow">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 23 2 17 7"/></svg>
+                完整工作流
+            </h2>
+
+            <p>现在你已经掌握了所有基础技能，让我们看看如何组合使用它们来完成一个完整的网站开发任务。</p>
+
+            <div class="timeline">
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">01</span>
+                        <h3 class="step-title">准备业务文档</h3>
+                    </div>
+                    <p>整理你的业务资料，包括公司介绍、产品信息、目标受众、SEO 关键词等。保存为 Markdown 文件。</p>
+                    <div class="ai-chat-box">
+                        <div class="chat-message user">
+                            <div class="avatar user">You</div>
+                            <div class="message-content">
+                                <span class="prompt-label">Prompt</span>
+                                <span class="copy-prompt">复制代码</span>
+                                我有一份业务文档，路径是 `官方核心资料手册.md`。请帮我分析并提取：1. 公司核心信息 2. 产品分类 3. 目标受众 4. SEO 关键词。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">02</span>
+                        <h3 class="step-title">设计网站框架</h3>
+                    </div>
+                    <p>基于业务文档，设计网站的信息架构（页面列表、层级关系、导航结构）。</p>
+                    <div class="ai-chat-box">
+                        <div class="chat-message user">
+                            <div class="avatar user">You</div>
+                            <div class="message-content">
+                                <span class="prompt-label">Prompt</span>
+                                <span class="copy-prompt">复制代码</span>
+                                请根据业务文档帮我设计网站框架。要求：1. 列出所有需要的页面 2. 定义页面层级关系 3. 为每个页面分配 SEO 关键词 4. 确保符合用户意图（信息型、商业型、交易型）。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">03</span>
+                        <h3 class="step-title">定义设计系统</h3>
+                    </div>
+                    <p>创建颜色、字体、间距等设计规范，确保品牌一致性。</p>
+                    <div class="ai-chat-box">
+                        <div class="chat-message user">
+                            <div class="avatar user">You</div>
+                            <div class="message-content">
+                                <span class="prompt-label">Prompt</span>
+                                <span class="copy-prompt">复制代码</span>
+                                请帮我创建完整的设计系统规则文件。包括：1. 颜色系统（03-color-system.md）2. 字体系统（04-typography.md）3. 间距规范（05-spacing.md）4. 布局规范（06-layout.md）。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">04</span>
+                        <h3 class="step-title">创建全局组件</h3>
+                    </div>
+                    <p>开发 Header、Footer 等全局组件，确保所有页面共享。</p>
+                    <div class="ai-chat-box">
+                        <div class="chat-message user">
+                            <div class="avatar user">You</div>
+                            <div class="message-content">
+                                <span class="prompt-label">Prompt</span>
+                                <span class="copy-prompt">复制代码</span>
+                                请帮我创建全局 Header 和 Footer 组件。要求：1. 使用我定义的设计系统变量 2. 响应式设计 3. 包含 Schema 标记 4. 保存到 website/global/ 目录。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">05</span>
+                        <h3 class="step-title">生成页面内容</h3>
+                    </div>
+                    <p>使用 SKILL 和规则，为每个页面生成符合规范的完整内容。</p>
+                    <div class="ai-chat-box">
+                        <div class="chat-message user">
+                            <div class="avatar user">You</div>
+                            <div class="message-content">
+                                <span class="prompt-label">Prompt</span>
+                                <span class="copy-prompt">复制代码</span>
+                                请帮我生成首页的完整内容。要求：1. 使用 b2b-seo-copywriter SKILL 2. 遵循所有规则文件 3. 包含 Hero、Features、CTA 等区块 4. 使用 AIDA 模型 5. 包含 JSON-LD Schema。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-marker"></div>
+                    <div class="step-header">
+                        <span class="step-number">06</span>
+                        <h3 class="step-title">上传到 WordPress</h3>
+                    </div>
+                    <p>将生成的页面内容上传到 WordPress，完成部署。</p>
+                    <div class="ai-chat-box">
+                        <div class="chat-message user">
+                            <div class="avatar user">You</div>
+                            <div class="message-content">
+                                <span class="prompt-label">Prompt</span>
+                                <span class="copy-prompt">复制代码</span>
+                                请帮我将首页内容上传到 WordPress。要求：1. 创建新页面 2. 插入内容 3. 设置 SEO 元数据 4. 发布页面。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="chat">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                对话示例
+            </h2>
+
+            <p>以下是一些常见的对话场景，帮助你更好地与 AI 协作：</p>
+
+            <h3>场景 1：创建新页面</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我创建一个"关于我们"页面。要求：1. 使用 b2b-seo-copywriter SKILL 2. 包含公司历史、团队介绍、价值观 3. 使用我定义的设计系统 4. 包含图片画廊。
+                    </div>
+                </div>
+            </div>
+
+            <h3>场景 2：修改现有页面</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我修改首页的 Hero 区域。要求：1. 更新标题为更吸引人的文案 2. 添加新的背景图片 3. 优化 CTA 按钮文案 4. 保持响应式设计。
+                    </div>
+                </div>
+            </div>
+
+            <h3>场景 3：SEO 优化</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我优化产品页面的 SEO。要求：1. 使用 keyword-research SKILL 分析关键词 2. 优化 Title 和 Meta Description 3. 添加 JSON-LD Schema 4. 优化 H1-H6 结构。
+                    </div>
+                </div>
+            </div>
+
+            <h3>场景 4：批量生成</h3>
+            <div class="ai-chat-box">
+                <div class="chat-message user">
+                    <div class="avatar user">You</div>
+                    <div class="message-content">
+                        <span class="prompt-label">Prompt</span>
+                        <span class="copy-prompt">复制代码</span>
+                        请帮我批量生成 10 个产品页面。要求：1. 使用产品列表数据 2. 每个页面包含产品详情、规格、价格 3. 使用统一的模板 4. 上传到 WordPress。
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="faq">
+            <h2>
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+                常见问题
+            </h2>
+
+            <h4>Q1: SKILL 和规则有什么区别？</h4>
+            <p>A: SKILL 定义 AI 的专业能力和工作流程，而规则定义项目的编码标准和设计规范。SKILL 是"怎么做"，规则是"做什么"。</p>
+
+            <h4>Q2: 如何调试 SKILL 不生效的问题？</h4>
+            <p>A: 检查以下几点：1. SKILL 文件是否在 .trae/skills/ 目录下 2. 文件名是否正确（SKILL.md） 3. YAML frontmatter 是否完整 4. 重新加载 Trae IDE。</p>
+
+            <h4>Q3: 可以同时使用多个 SKILL 吗？</h4>
+            <p>A: 可以。Trae 会根据任务类型自动选择合适的 SKILL。你也可以在对话中明确指定使用哪个 SKILL。</p>
+
+            <h4>Q4: 如何确保 AI 生成的代码符合我的设计规范？</h4>
+            <p>A: 创建详细的规则文件，包括颜色、字体、间距、组件规范等。AI 会自动读取这些规则并应用。</p>
+
+            <h4>Q5: WordPress 连接失败怎么办？</h4>
+            <p>A: 检查：1. .env 文件是否正确配置 2. 应用密码是否有效 3. WordPress REST API 是否启用 4. 网络连接是否正常。</p>
+
+            <h4>Q6: 如何备份我的 SKILL 和规则？</h4>
+            <p>A: 将 .trae/ 目录添加到 Git 仓库，定期提交。建议使用版本控制管理所有配置文件。</p>
+
+            <h4>Q7: 可以分享 SKILL 给团队成员吗？</h4>
+            <p>A: 可以。将 SKILL 文件夹复制到团队成员的 .trae/skills/ 目录即可。也可以通过 Git 共享。</p>
+
+            <h4>Q8: 如何更新 SKILL？</h4>
+            <p>A: 直接编辑 SKILL.md 文件，保存后 Trae 会自动重新加载。建议在更新前备份原文件。</p>
+
+            <h4>Q9: 支持哪些编程语言？</h4>
+            <p>A: Trae 支持所有主流编程语言，包括 HTML、CSS、JavaScript、Python、PHP、React、Vue 等。</p>
+
+            <h4>Q10: 如何获取更多帮助？</h4>
+            <p>A: 查看 Trae 官方文档、社区论坛，或联系技术支持团队。</p>
+        </section>
+
+        <footer>
+            <div class="progress-wrapper">
+                <div class="progress-label">教程完成度</div>
+                <div class="progress-bar">
+                    <div class="progress-fill" style="width: 100%"></div>
+                </div>
+            </div>
+            <p>恭喜你完成了网站架构设计完整教程！现在你已经掌握了使用 Trae 创建自定义 SKILL、配置规则、绑定 WordPress、建立设计系统的全部技能。</p>
+            <p style="margin-top: 20px; opacity: 0.6;">© 2026 Website Architect Tutorial. Built with Trae AI.</p>
+        </footer>
+    </main>
+</div>
+
+<script>
+    // Smooth scroll for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Active link highlighting
+    const sections = document.querySelectorAll('section[id]');
+    const navItems = document.querySelectorAll('.nav-item');
+
+    window.addEventListener('scroll', () => {
+        let current = '';
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (scrollY >= sectionTop - 200) {
+                current = section.getAttribute('id');
+            }
+        });
+
+        navItems.forEach(item => {
+            item.classList.remove('active');
+            if (item.getAttribute('href') === `#${current}`) {
+                item.classList.add('active');
+            }
+        });
+    });
+
+    // Copy prompt functionality
+    document.querySelectorAll('.copy-prompt').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const messageContent = this.parentElement;
+            const text = messageContent.innerText.replace('Prompt\n复制代码\n', '').trim();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = this.innerText;
+                this.innerText = '已复制!';
+                this.style.color = '#10b981';
+                
+                setTimeout(() => {
+                    this.innerText = originalText;
+                    this.style.color = '';
+                }, 2000);
+            }).catch(err => {
+                console.error('Failed to copy:', err);
+                this.innerText = '复制失败';
+            });
+        });
+    });
+
+    // Animate progress bar on scroll
+    const progressBar = document.querySelector('.progress-fill');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                progressBar.style.transition = 'width 1s ease-out';
+                progressBar.style.width = '100%';
+            }
+        });
+    }, { threshold: 0.5 });
+
+    if (progressBar) {
+        observer.observe(progressBar);
+    }
+</script>
+
+</body>
+</html>
