@@ -1,0 +1,2642 @@
+<!-- ========================= 1.hero-section.html ========================= -->
+<section id="hero-minimalist-final"> 
+    <script type="application/ld+json"> 
+    { 
+      "@context": "https://schema.org", 
+      "@type": "Organization", 
+      "name": "Fursone", 
+      "url": "https://fursone.com", 
+      "logo": "https://fursone.com/wp-content/uploads/2026/02/fursone.png", 
+      "foundingDate": "1995", 
+      "description": "Premium Tweed & Knit Fabric Manufacturer in Wenzhou", 
+      "address": { 
+        "@type": "PostalAddress", 
+        "addressLocality": "Wenzhou", 
+        "addressCountry": "CN" 
+      } 
+    } 
+    </script> 
+ 
+    <style> 
+        #hero-minimalist-final { 
+            position: relative; 
+            width: 100%; 
+            height: 88vh; 
+            min-height: 540px; 
+            overflow: hidden; 
+            display: flex; 
+            align-items: center; 
+            font-family: var(--font-heading, 'Playfair Display', serif); 
+            color: #f3f2e6; 
+            background-color: #26292a; 
+        } 
+ 
+        #hero-minimalist-final video.bg-video { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            object-fit: cover; z-index: 0; opacity: 0.9; 
+        } 
+ 
+        .bg-img-mobile { 
+            position: absolute !important; top: 0 !important; left: 0 !important; width: 100% !important; height: 100% !important; 
+            z-index: 0 !important; display: none; 
+        } 
+ 
+        #hero-minimalist-final .overlay-gradient { 
+            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
+            background: linear-gradient(to right, rgba(38, 41, 42, 0.85) 0%, rgba(38, 41, 42, 0.6) 40%, rgba(38, 41, 42, 0) 100%); 
+            z-index: 1; 
+        } 
+ 
+        #hero-minimalist-final .content-container { 
+            position: relative; z-index: 2; 
+            width: 100%; max-width: 1600px; margin: 0 auto; 
+            padding-left: 100px; padding-right: 40px; 
+            display: flex; justify-content: flex-start; 
+            box-sizing: border-box; 
+        } 
+ 
+        #hero-minimalist-final .text-content { 
+            max-width: 720px; 
+            animation: fadeInMove 1s ease-out forwards; 
+        } 
+ 
+        #hero-minimalist-final .pre-header { 
+            display: block; font-family: var(--font-body, 'Playfair', serif); 
+            font-size: 14px; font-weight: 700; letter-spacing: 3px; 
+            margin-bottom: 25px; opacity: 0.95; 
+            border-left: 3px solid #ffffff; padding-left: 18px; 
+            text-transform: uppercase; color: #f9f9f9; 
+        } 
+ 
+        #hero-minimalist-final h1 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: clamp(32px, 4.2vw, 52px);
+            font-weight: 700; line-height: 1.25; margin-bottom: 30px;
+            text-shadow: 0 5px 20px rgba(38, 41, 42, 0.5); color: #f3f2e6;
+        } 
+ 
+        #hero-minimalist-final p.sub-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px; line-height: 1.7; margin-bottom: 40px;
+            opacity: 0.95; color: #f3f2e6; font-weight: 400;
+        } 
+ 
+        #hero-minimalist-final strong {
+            font-weight: 400 !important; color: #f3f2e6 !important; border-bottom: none !important;
+        } 
+ 
+        #hero-minimalist-final .btn-group { display: flex; gap: 20px; } 
+ 
+        #hero-minimalist-final .btn { 
+            padding: 16px 40px; font-family: var(--font-body, 'Playfair', serif); 
+            font-size: 13px; font-weight: 700; text-decoration: none; 
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); 
+            letter-spacing: 1.5px; border-radius: 0; text-align: center; 
+            white-space: nowrap; text-transform: uppercase; cursor: pointer; 
+        } 
+ 
+        #hero-minimalist-final .btn-primary { background-color: #934d34; color: #f3f2e6; border: 1px solid #934d34; }
+        #hero-minimalist-final .btn-primary:hover { background-color: transparent; color: #f3f2e6; border-color: #f3f2e6; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(38, 41, 42, 0.2); } 
+ 
+        #hero-minimalist-final .btn-outline { background-color: rgba(255,255,255,0.05); color: #ffffff; border: 1px solid rgba(255,255,255,0.5); backdrop-filter: blur(4px); } 
+        #hero-minimalist-final .btn-outline:hover { background-color: #ffffff; color: #000000; border-color: #ffffff; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(255,255,255,0.1); } 
+ 
+        @keyframes fadeInMove { 
+            from { opacity: 0; transform: translateY(20px); } 
+            to { opacity: 1; transform: translateY(0); } 
+        } 
+ 
+        @media (max-width: 768px) { 
+            #hero-minimalist-final { 
+                height: auto !important; 
+                min-height: 72svh !important; 
+                padding: 108px 0 64px !important; 
+                align-items: center; 
+            } 
+ 
+            #hero-minimalist-final video.bg-video { display: none !important; } 
+             
+            .bg-img-mobile { 
+                display: block !important; 
+                object-position: center bottom !important;
+            } 
+ 
+            #hero-minimalist-final .overlay-gradient { 
+                background: rgba(38, 41, 42, 0.75); 
+            } 
+ 
+            #hero-minimalist-final .content-container { 
+                padding-left: 30px !important; 
+                padding-right: 30px !important; 
+                justify-content: center; 
+                text-align: center; 
+                padding-bottom: 0;
+                height: auto; 
+                display: flex;
+                box-sizing: border-box !important;
+            } 
+            
+            #hero-minimalist-final .text-content { 
+                max-width: 100%; margin-top: 0; 
+            } 
+ 
+            #hero-minimalist-final .pre-header { 
+                border-left: none; margin-bottom: 12px; font-size: 10px !important; 
+                padding-left: 0; 
+                letter-spacing: 1.6px !important;
+            } 
+ 
+            #hero-minimalist-final h1 {
+                font-size: 23px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 14px !important;
+                letter-spacing: -0.5px !important;
+                text-shadow: 0 2px 10px rgba(38, 41, 42, 0.3) !important;
+            } 
+             
+            #hero-minimalist-final p.sub-text { 
+                font-size: 13px !important; 
+                line-height: 1.45 !important; 
+                margin-bottom: 20px !important; 
+                font-weight: 400 !important; opacity: 0.9 !important; 
+                letter-spacing: 0 !important; 
+            } 
+ 
+            #hero-minimalist-final .btn-group { 
+                flex-direction: row; justify-content: center; align-items: center; gap: 15px; width: 100%; 
+            } 
+
+            #hero-minimalist-final .btn-primary,
+            #hero-minimalist-final .btn { 
+                padding: 12px 24px !important;
+                font-size: 11px !important;
+                font-weight: 600 !important;
+                flex: 0 1 auto !important;
+                background-color: var(--cta-button, #934d34) !important;
+                color: var(--cta-text, #f3f2e6) !important;
+                border: 1px solid var(--cta-button, #934d34) !important;
+                border-radius: 0 !important;
+                letter-spacing: 1.5px !important;
+                text-transform: uppercase !important;
+                text-align: center !important;
+                display: inline-flex !important;
+                justify-content: center !important;
+                margin: 0 !important;
+                box-shadow: none !important;
+            } 
+            
+            #hero-minimalist-final .btn-outline {
+                background-color: transparent !important;
+                color: #f3f2e6 !important;
+                border: 1px solid #f3f2e6 !important;
+            }
+        } 
+    </style> 
+ 
+    <video class="bg-video" autoplay loop muted playsinline poster="https://fursone.com/wp-content/uploads/2026/04/premium-textile-fabric-wholesale-003.jpg">
+        <source src="https://res.cloudinary.com/deoymtjxi/video/upload/v1738596897/fursone-hero-bg_z8qj9l.mp4" type="video/mp4">
+    </video>
+
+    <div class="bg-img-mobile" style="background-image: url('https://fursone.com/wp-content/uploads/2026/04/premium-textile-fabric-wholesale-003.jpg'); background-size: cover; background-position: center bottom; background-repeat: no-repeat;"></div>
+    
+    <div class="overlay-gradient"></div> 
+     
+    <div class="content-container"> 
+        <div class="text-content"> 
+            <span class="pre-header">Factory-Direct Fancy Fabric Sourcing</span> 
+             
+            <h1>Factory-Direct Tweed &amp; Knit Fabrics for Fashion Collections</h1> 
+             
+            <p class="sub-text"> 
+                Source signature tweeds, sweater knits, and ready-stock textures from our Wenzhou mill. Start with <strong>100m stock</strong> or build <strong>1000m custom programs</strong>.
+            </p> 
+             
+            <div class="btn-group"> 
+                <a href="/contact" class="btn btn-primary">Start Your Project</a> 
+            </div> 
+        </div> 
+    </div> 
+ 
+    <script> 
+        (function() { 
+            if (window.innerWidth > 768) { 
+                const section = document.getElementById('hero-minimalist-final'); 
+                window.addEventListener('scroll', function() { 
+                    const scrolled = window.scrollY; 
+                    const video = section.querySelector('video.bg-video'); 
+                    const content = section.querySelector('.text-content'); 
+                     
+                    if (video) { 
+                        if (scrolled < section.offsetHeight) {
+                        video.style.transform = `translateY(${scrolled * 0.3}px)`; 
+                        }
+                    } 
+                    if (content) { 
+                        if (scrolled < section.offsetHeight) {
+                        content.style.opacity = 1 - (scrolled / 600); 
+                        }
+                    } 
+                }); 
+            } 
+        })(); 
+    </script> 
+</section>
+
+<!-- ========================= 2.why-fursone-section.html ========================= -->
+<section id="why-fursone-section">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSection",
+      "name": "Why Choose Fursone",
+      "mainEntity": {
+        "@type": "Organization",
+        "name": "Fursone",
+        "description": "Wenzhou Textile Manufacturer specializing in high-end fancy yarns and textured fabrics.",
+        "url": "https://fursone.com"
+      }
+    }
+    </script>
+
+    <style>
+        /* Base Styles (Mobile First) */
+        #why-fursone-section {
+            background-color: var(--bg-secondary, #d9d5c9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #why-fursone-section .container {
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        #why-fursone-section h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 32px;
+            line-height: 1.1;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        #why-fursone-section .intro-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 15px;
+            line-height: 1.6;
+            color: var(--text-main, #26292a);
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        #why-fursone-section .feature-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        #why-fursone-section .feature-item {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-left: 1px solid rgba(21, 37, 47, 0.1);
+            padding-left: 15px;
+        }
+
+        #why-fursone-section .feature-item h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 15px;
+            font-weight: 500;
+            color: var(--text-main, #26292a);
+            margin-bottom: 6px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        #why-fursone-section .feature-item p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            line-height: 1.4;
+            color: var(--text-main, #26292a);
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        #why-fursone-section .cta-wrapper {
+            margin-top: 30px;
+        }
+
+        /* Mobile Button (Underlined Link) */
+        #why-fursone-section .cta-button {
+            background: transparent !important;
+            color: #26292a !important;
+            border: none !important;
+            border-bottom: 1px solid #26292a !important;
+            padding: 0 0 2px 0 !important;
+            margin: 0 !important;
+            font-size: 11px !important;
+            font-weight: 600 !important;
+            width: auto !important;
+            display: inline-block !important;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+        }
+
+        #why-fursone-section .image-column {
+            min-height: 250px;
+            width: 100%;
+            order: 1; /* Image below text on mobile */
+        }
+
+        #why-fursone-section .feature-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Desktop Styles (Compact Full Bleed Split) */
+        @media (min-width: 1025px) {
+            #why-fursone-section {
+                padding: 0 !important;
+                display: grid;
+                grid-template-columns: 50% 50%; /* Changed to 50/50 split */
+                align-items: center;
+                min-height: auto;
+            }
+
+            #why-fursone-section .container {
+                max-width: 100%;
+                margin: 0;
+                padding: 0;
+                display: contents; /* Removes container wrapper influence */
+            }
+
+            #why-fursone-section .text-column {
+                padding: 80px 80px 80px 120px; /* Increased vertical padding for better spacing */
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                order: 1;
+                max-width: 800px;
+                margin-left: auto;
+            }
+
+            #why-fursone-section h2 {
+                font-size: 36px;
+                margin-bottom: 40px; /* Increased from 32px */
+                line-height: 1.3; /* Increased from 1.1 for elegance */
+            }
+
+            #why-fursone-section .intro-text {
+                font-size: 16px;
+                margin-bottom: 60px; /* Increased from 48px */
+                line-height: 1.8; /* Increased from 1.6 for readability */
+            }
+
+            #why-fursone-section .feature-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 40px; /* Increased gap for breathing room */
+            }
+
+            #why-fursone-section .cta-wrapper {
+                margin-top: 40px;
+            }
+
+            /* Desktop Button (Solid Block) */
+            #why-fursone-section .cta-button {
+                background-color: var(--cta-button, #934d34) !important;
+                color: var(--cta-text, #f3f2e6) !important;
+                border: 1px solid var(--cta-button, #934d34) !important;
+                padding: 12px 28px !important; /* Significantly reduced padding */
+                font-size: 12px !important; /* Smaller font */
+                font-weight: 600 !important;
+                width: auto !important;
+                display: inline-block !important;
+                transition: all 0.3s ease;
+                letter-spacing: 1px;
+            }
+
+            #why-fursone-section .cta-button:hover {
+                background-color: transparent !important;
+                color: var(--text-main, #26292a) !important;
+                border-color: var(--text-main, #26292a) !important;
+                transform: translateY(-3px);
+            }
+
+            #why-fursone-section .image-column {
+                height: 100%;
+                width: 100%;
+                order: 2;
+                position: relative;
+                min-height: 500px; /* Ensure image has height */
+            }
+
+            #why-fursone-section .feature-image {
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="text-column">
+            <h2>The Fursone Advantage</h2>
+            <div class="intro-text">
+                Achieve the artisan aesthetic you envision, without the supply chain headaches. We connect inspired design with seamless manufacturing.
+            </div>
+            
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <h3>100M Meters In Stock</h3>
+                    <p>Launch your collection faster. Our in-stock materials ship in 3-7 days. No delays.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>1000M Custom MOQ</h3>
+                    <p>Minimize your risk. Develop exclusive textures with a lower initial commitment.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>7-Day Rapid Sampling</h3>
+                    <p>Go from concept to physical swatch in one week. Outpace your competition.</p>
+                </div>
+                <div class="feature-item">
+                    <h3>Affordable Luxury</h3>
+                    <p>Improve your margins. Get the premium European mill quality for 30-50% less.</p>
+                </div>
+            </div>
+
+            <div class="cta-wrapper">
+                <a href="/about-us" class="cta-button">Why Work With Fursone</a>
+            </div>
+        </div>
+
+        <div class="image-column">
+            <img src="https://fursone.com/wp-content/uploads/2025/09/微信图片_20250922164704.jpg" 
+                 alt="Close-up of Fursone textile manufacturing process" 
+                 class="feature-image" 
+                 width="800" height="900" loading="lazy">
+            <div class="experience-badge"></div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        const section = document.getElementById('why-fursone-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = section.querySelectorAll('.feature-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const grid = section.querySelector('.feature-grid');
+        if (grid) {
+            const items = section.querySelectorAll('.feature-item');
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            observer.observe(grid);
+        }
+    })();
+    </script>
+</section>
+
+<!-- ========================= 3.core-collections.html ========================= -->
+<section id="core-collections-section">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Premium Textile & Fabric Collections",
+      "description": "Explore Fursone's signature textile collections including Chanel-style tweeds, heavy bouclé, and intricate cable knits.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fursone",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Wenzhou",
+          "addressCountry": "CN"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        #core-collections-section {
+            background-color: var(--bg-primary, #f3f2e6);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #core-collections-section .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        #core-collections-section h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            line-height: 1.3;
+            color: var(--text-main, #26292a);
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        #core-collections-section .intro-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-main, #26292a);
+            margin-bottom: 60px;
+            font-weight: 300;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #core-collections-section .collections-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        #core-collections-section .collection-card {
+            display: block;
+            text-decoration: none;
+            group: hover;
+        }
+
+        #core-collections-section .image-wrapper {
+            width: 100%;
+            padding-bottom: 125%;
+            position: relative;
+            overflow: hidden;
+            background-color: #e0e0e0;
+            margin-bottom: 20px;
+        }
+
+        #core-collections-section .collection-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        #core-collections-section .collection-card:hover .collection-image {
+            transform: scale(1.05);
+        }
+
+        #core-collections-section .card-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(38, 41, 42, 0.1);
+            padding-bottom: 10px;
+        }
+
+        #core-collections-section h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-main, #26292a);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin: 0;
+        }
+
+        #core-collections-section .arrow-icon {
+            font-size: 18px;
+            color: var(--text-main, #26292a);
+            transition: transform 0.3s ease;
+        }
+
+        #core-collections-section .collection-card:hover .arrow-icon {
+            transform: translateX(5px);
+        }
+
+        #core-collections-section .cta-wrapper {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #core-collections-section .cta-button {
+            background-color: var(--cta-button, #934d34);
+            color: var(--cta-text, #f3f2e6);
+            border: 1px solid var(--cta-button, #934d34);
+            padding: 12px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        #core-collections-section .cta-button:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+
+        @media (max-width: 1024px) {
+            #core-collections-section .collections-grid {
+                display: flex;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                gap: 20px;
+                padding-bottom: 20px;
+                margin-right: -20px; 
+            }
+
+            #core-collections-section .collection-card {
+                flex: 0 0 85%;
+                scroll-snap-align: start;
+            }
+
+            #core-collections-section .container {
+                padding: 0 20px;
+            }
+
+            #core-collections-section h2 {
+                font-size: 32px;
+                text-align: left;
+            }
+
+            #core-collections-section .intro-text {
+                text-align: left;
+                margin-left: 0;
+            }
+
+            #core-collections-section .cta-wrapper {
+                text-align: left;
+            }
+
+            #core-collections-section .cta-button {
+                background: transparent;
+                color: #26292a;
+                border: none;
+                border-bottom: 1px solid #26292a;
+                padding: 0 0 2px 0;
+                margin: 0;
+                font-size: 11px;
+                font-weight: 600;
+                width: auto;
+            }
+            
+            #core-collections-section .cta-button:hover {
+                transform: none;
+                color: #26292a;
+                border-color: #26292a;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h2>Signature Textile Collections</h2>
+        <div class="intro-text">
+            From heritage Chanel-style tweeds to avant-garde textured knits. Our Wenzhou facility produces premium fabrics for global fashion houses.
+        </div>
+
+        <div class="collections-grid">
+            <a href="/chanel-style-tweed/" class="collection-card">
+                <div class="image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/02/boucle-fancy-yarn-tweed-fabric-textile-fursone-001-1-scaled.jpg" alt="Classic Chanel Style Tweed Fabric" class="collection-image" loading="lazy" width="600" height="750">
+                </div>
+                <div class="card-content">
+                    <h3>Chanel-Style Tweeds</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+            </a>
+
+            <a href="/woolen-overcoat/" class="collection-card">
+                <div class="image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/02/boucle-fancy-yarn-tweed-fabric-textile-fursone-002-1-scaled.jpg" alt="Heavyweight Boucle Fabric" class="collection-image" loading="lazy" width="600" height="750">
+                </div>
+                <div class="card-content">
+                    <h3>Heavyweight Bouclé</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+            </a>
+
+            <a href="/cable-sweater-knit/" class="collection-card">
+                <div class="image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/02/worsted-woolen-tweed-fabric-textile-yarn-fursone-001-1-scaled.jpg" alt="Structured Cable Knit Fabric" class="collection-image" loading="lazy" width="600" height="750">
+                </div>
+                <div class="card-content">
+                    <h3>Structured Cable Knits</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+            </a>
+
+            <a href="/knitted-overcoat/" class="collection-card">
+                <div class="image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/02/chenille-tweed-fabric-textile-melange-fursone-001-1-scaled.jpg" alt="Fancy Yarn Blends" class="collection-image" loading="lazy" width="600" height="750">
+                </div>
+                <div class="card-content">
+                    <h3>Fancy Yarn Blends</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+            </a>
+
+            <a href="/knit-fabric/" class="collection-card">
+                <div class="image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/02/worsted-woolen-tweed-fabric-textile-yarn-fursone-002-1-scaled.jpg" alt="Metallic Thread Fabrics" class="collection-image" loading="lazy" width="600" height="750">
+                </div>
+                <div class="card-content">
+                    <h3>Metallic Series</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+            </a>
+
+            <a href="/sweater-knit/" class="collection-card">
+                <div class="image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/02/knitted-embroidery-fabric-textile-fursone-001-1-scaled.jpg" alt="Sustainable Eco Knits" class="collection-image" loading="lazy" width="600" height="750">
+                </div>
+                <div class="card-content">
+                    <h3>Eco-Sustainable Knits</h3>
+                    <span class="arrow-icon">→</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="cta-wrapper">
+            <a href="/contact" class="cta-button">Request Fabric Swatches</a>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        const section = document.getElementById('core-collections-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const cards = section.querySelectorAll('.collection-card');
+                    cards.forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const grid = section.querySelector('.collections-grid');
+        if (grid) {
+            const cards = section.querySelectorAll('.collection-card');
+            cards.forEach(card => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            observer.observe(grid);
+        }
+    })();
+    </script>
+</section>
+
+<!-- ========================= 4.manufacturing-section.html ========================= -->
+<section id="manufacturing-section">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSection",
+      "name": "Manufacturing Capabilities",
+      "description": "Wenzhou textile factory capabilities including custom yarn spinning, knitting, weaving, and lab-tested quality control.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fursone",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Wenzhou",
+          "addressCountry": "CN"
+        }
+      }
+    }
+    </script>
+
+    <style>
+        #manufacturing-section {
+            background-color: var(--bg-secondary, #d9d5c9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #manufacturing-section .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        #manufacturing-section h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            line-height: 1.3;
+            color: var(--text-main, #26292a);
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        #manufacturing-section .intro-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-main, #26292a);
+            margin-bottom: 60px;
+            font-weight: 300;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #manufacturing-section .capability-row {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+
+        #manufacturing-section .capability-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        #manufacturing-section .capability-row:last-child {
+            margin-bottom: 0;
+        }
+
+        #manufacturing-section .image-col {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+            height: 450px;
+        }
+
+        #manufacturing-section .capability-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        #manufacturing-section .capability-row:hover .capability-image {
+            transform: scale(1.05);
+        }
+
+        #manufacturing-section .text-col {
+            flex: 1;
+            padding: 40px;
+        }
+
+        #manufacturing-section .step-number {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 80px;
+            color: rgba(38, 41, 42, 0.1);
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: 0;
+        }
+
+        #manufacturing-section h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 28px;
+            font-weight: 500;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #manufacturing-section p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-main, #26292a);
+            font-weight: 300;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        #manufacturing-section .feature-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #manufacturing-section .feature-list li {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            color: var(--text-main, #26292a);
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            font-weight: 500;
+        }
+
+        #manufacturing-section .feature-list li::before {
+            content: "•";
+            color: var(--cta-button, #934d34);
+            position: absolute;
+            left: 0;
+            font-size: 18px;
+            line-height: 1;
+        }
+
+        #manufacturing-section .cta-wrapper {
+            text-align: center;
+            margin-top: 80px;
+        }
+
+        #manufacturing-section .cta-button {
+            background-color: var(--cta-button, #934d34);
+            color: var(--cta-text, #f3f2e6);
+            border: 1px solid var(--cta-button, #934d34);
+            padding: 16px 45px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        #manufacturing-section .cta-button:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 1024px) {
+            #manufacturing-section .capability-row {
+                flex-direction: column !important;
+                gap: 30px;
+                margin-bottom: 60px;
+            }
+
+            #manufacturing-section .image-col {
+                width: 100%;
+                height: 300px;
+            }
+
+            #manufacturing-section .text-col {
+                padding: 0 20px;
+                text-align: left;
+                box-sizing: border-box;
+            }
+
+            #manufacturing-section .container {
+                padding: 0 20px;
+            }
+
+            #manufacturing-section h2 {
+                font-size: 32px;
+                text-align: left;
+            }
+
+            #manufacturing-section .intro-text {
+                text-align: left;
+                font-size: 16px;
+                margin-bottom: 40px;
+            }
+
+            #manufacturing-section .cta-wrapper {
+                text-align: left;
+                margin-top: 40px;
+            }
+
+            #manufacturing-section .cta-button {
+                background: transparent;
+                color: #26292a;
+                border: none;
+                border-bottom: 1px solid #26292a;
+                padding: 0 0 2px 0;
+                margin: 0;
+                font-size: 11px;
+                font-weight: 600;
+                width: auto;
+            }
+
+            #manufacturing-section .cta-button:hover {
+                transform: none;
+                color: #26292a;
+                border-color: #26292a;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h2>Advanced Textile Manufacturing Capabilities</h2>
+        <div class="intro-text">
+            Leading fabric manufacturer specializing in custom textile production, yarn development, and large-scale fabric manufacturing. Our vertically integrated textile factory delivers premium quality fabrics with precision craftsmanship and comprehensive quality control systems for fashion brands worldwide.
+        </div>
+
+        <div class="capability-row">
+            <div class="image-col">
+                <img src="https://fursone.com/wp-content/uploads/2026/04/premium-textile-fabric-wholesale-006.jpg" alt="Custom yarn spinning process at Fursone" class="capability-image" loading="lazy" width="800" height="600">
+            </div>
+            <div class="text-col">
+                <div class="step-number">01</div>
+                <h3>Custom Yarn Development</h3>
+                <p>Innovation starts at the fiber level. Our in-house spinning division allows us to create proprietary yarn blends, textures, and color combinations that are exclusive to your brand.</p>
+                <ul class="feature-list">
+                    <li>Fancy Bouclé & Slub Yarns</li>
+                    <li>Metallic & Lurex Integration</li>
+                    <li>Recycled & Eco-Fiber Blends</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="capability-row">
+            <div class="image-col">
+                <img src="https://fursone.com/wp-content/uploads/2026/02/textile-factory-workshop-production-equipment-manufacturing-fursone-25-1-scaled.jpg" alt="Textile quality control laboratory testing" class="capability-image" loading="lazy" width="800" height="600">
+            </div>
+            <div class="text-col">
+                <div class="step-number">02</div>
+                <h3>Lab-Tested Quality</h3>
+                <p>We don't just manufacture; we validate. Every production batch undergoes rigorous physical and chemical testing in our certified laboratory to ensure it meets international export standards.</p>
+                <ul class="feature-list">
+                    <li>Colorfastness & Shrinkage Testing</li>
+                    <li>Pilling & Abrasion Resistance</li>
+                    <li>Oeko-Tex Standard 100 Compliance</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="capability-row">
+            <div class="image-col">
+                <img src="https://fursone.com/wp-content/uploads/2026/02/textile-factory-workshop-production-equipment-manufacturing-fursone-38-1-scaled.jpg" alt="High-volume knitting production line" class="capability-image" loading="lazy" width="800" height="600">
+            </div>
+            <div class="text-col">
+                <div class="step-number">03</div>
+                <h3>High-Volume Production</h3>
+                <p>Scalability without compromise. Our advanced knitting and weaving fleet is optimized for efficiency, delivering large-scale orders with the same attention to detail as our sample yardage.</p>
+                <ul class="feature-list">
+                    <li>Advanced Circular Knitting Machines</li>
+                    <li>Flexible MOQ for Custom Orders</li>
+                    <li>Rapid Lead Times (25-35 Days)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="cta-wrapper">
+            <a href="/services/custom-manufacturing" class="cta-button">Explore Custom Manufacturing</a>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        const section = document.getElementById('manufacturing-section');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const rows = section.querySelectorAll('.capability-row');
+                    rows.forEach((row, index) => {
+                        setTimeout(() => {
+                            row.style.opacity = '1';
+                            row.style.transform = 'translateY(0)';
+                        }, index * 200);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const rows = section.querySelectorAll('.capability-row');
+        rows.forEach(row => {
+            row.style.opacity = '0';
+            row.style.transform = 'translateY(30px)';
+            row.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+        observer.observe(section);
+    })();
+    </script>
+</section>
+
+<!-- ========================= 5.case-studies.html ========================= -->
+<section id="b2b-split-slider">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSection",
+      "name": "Case Studies",
+      "description": "Success stories of custom fabric development for global fashion brands.",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fursone"
+      }
+    }
+    </script>
+
+    <style>
+        #b2b-split-slider {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: var(--bg-primary, #f3f2e6);
+            overflow: hidden;
+            font-family: var(--font-body, 'Playfair', serif);
+            color: var(--text-main, #26292a);
+        }
+
+        #b2b-split-slider .slide-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.6s ease-in-out, visibility 0.6s;
+            z-index: 1;
+        }
+
+        #b2b-split-slider .slide-item.active {
+            opacity: 1;
+            visibility: visible;
+            z-index: 2;
+        }
+
+        #b2b-split-slider .left-image {
+            width: 50%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #b2b-split-slider .left-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 6s ease;
+        }
+        #b2b-split-slider .slide-item.active .left-image img {
+            transform: scale(1.05);
+        }
+
+        #b2b-split-slider .right-content {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 10% 0 80px;
+            background: var(--bg-primary, #f3f2e6);
+            position: relative;
+        }
+
+        #b2b-split-slider .case-label {
+            display: inline-block;
+            background-color: rgba(147, 77, 52, 0.1);
+            color: var(--cta-button, #934d34);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            width: fit-content;
+            font-family: var(--font-body, 'Playfair', serif);
+        }
+
+        #b2b-split-slider h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            line-height: 1.3;
+            font-weight: 400;
+            margin-bottom: 40px;
+            color: var(--text-main, #26292a);
+        }
+
+        #b2b-split-slider p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-main, #26292a);
+            font-weight: 300;
+            margin-bottom: 30px;
+            max-width: 500px;
+            opacity: 0.9;
+        }
+
+        #b2b-split-slider .btn-group {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        #b2b-split-slider .btn {
+            padding: 14px 32px;
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid transparent;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-family: var(--font-body, 'Playfair', serif);
+        }
+
+        #b2b-split-slider .btn-primary {
+            background-color: var(--cta-button, #934d34);
+            color: var(--cta-text, #f3f2e6);
+            border: 1px solid var(--cta-button, #934d34);
+        }
+        #b2b-split-slider .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+            transform: translateY(-2px);
+        }
+
+        #b2b-split-slider .slider-nav {
+            position: absolute;
+            right: 40px;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 10;
+            align-items: center;
+        }
+
+        #b2b-split-slider .nav-arrow {
+            cursor: pointer;
+            color: rgba(38, 41, 42, 0.3);
+            font-size: 24px;
+            transition: color 0.3s;
+            user-select: none;
+        }
+        #b2b-split-slider .nav-arrow:hover { color: var(--cta-button, #934d34); }
+
+        #b2b-split-slider .dots-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            padding: 10px 0;
+        }
+
+        #b2b-split-slider .dot {
+            width: 10px;
+            height: 10px;
+            background-color: rgba(38, 41, 42, 0.2);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #b2b-split-slider .dot.active {
+            background-color: var(--cta-button, #934d34);
+            transform: scale(1.3);
+        }
+
+        @media (max-width: 980px) {
+            #b2b-split-slider { height: auto; }
+            #b2b-split-slider .slide-item {
+                position: relative;
+                flex-direction: column;
+                opacity: 1; visibility: visible;
+                display: none;
+            }
+            #b2b-split-slider .slide-item.active { display: flex; }
+            
+            #b2b-split-slider .left-image { width: 100%; height: 350px; }
+            #b2b-split-slider .right-content { width: 100%; padding: 40px 20px; box-sizing: border-box; }
+            #b2b-split-slider .slider-nav { display: none; }
+            #b2b-split-slider .btn-group { flex-direction: column; }
+            
+            /* Mobile Button Style Override */
+            #b2b-split-slider .btn {
+                background: transparent !important;
+                color: #26292a !important;
+                border: none !important;
+                border-bottom: 1px solid #26292a !important;
+                padding: 0 0 2px 0 !important;
+                margin: 0 !important;
+                font-size: 11px !important;
+                font-weight: 600 !important;
+                width: auto !important;
+                display: inline-block !important;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                text-decoration: none;
+                text-align: left;
+            }
+            #b2b-split-slider .btn:hover {
+                transform: none;
+                color: #26292a !important;
+                border-color: #26292a !important;
+            }
+            #b2b-split-slider .btn-group {
+                gap: 15px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+
+    <div class="slider-wrapper">
+        
+        <div class="slide-item active" data-index="0">
+            <div class="left-image">
+                <img src="https://fursone.com/wp-content/uploads/2026/02/boucle-fancy-yarn-tweed-fabric-textile-fursone-002-scaled.jpg" alt="Emerging designer bouclé fabric collection" loading="lazy" width="800" height="600">
+            </div>
+            <div class="right-content">
+                <span class="case-label">Emerging Designer</span>
+                <h2>Launching a Debut Collection with Low MOQ Support</h2>
+                <p><strong>Challenge:</strong> A NYC-based startup brand needed custom bouclé fabrics for their debut collection but was rejected by major mills due to small order volumes.</p>
+                <p><strong>Solution:</strong> Fursone provided our "Designer Support Program", offering a 100-meter MOQ for custom development, helping them refine yarn selection to meet budget.</p>
+                <div class="btn-group">
+                    <a href="/solutions/designer-brands" class="btn btn-primary">Start Your Brand</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-item" data-index="1">
+            <div class="left-image">
+                <img src="https://fursone.com/wp-content/uploads/2026/02/worsted-woolen-tweed-fabric-textile-yarn-fursone-208-1-scaled.jpg" alt="Luxury tweed fabric for fashion brands" loading="lazy" width="800" height="600">
+            </div>
+            <div class="right-content">
+                <span class="case-label">European Luxury Brand</span>
+                <h2>Cost-Effective Replication of Heritage Tweeds</h2>
+                <p><strong>Challenge:</strong> A French affordable luxury brand wanted to introduce a "Chanel-style" jacket line but found European mill prices too high for their target margin.</p>
+                <p><strong>Solution:</strong> Our R&D team analyzed the original swatch structure. By substituting 20% of the silk with high-grade mercerized cotton, we achieved a 95% visual match at 40% lower cost.</p>
+                <div class="btn-group">
+                    <a href="/services/custom-manufacturing" class="btn btn-primary">Request Analysis</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide-item" data-index="2">
+            <div class="left-image">
+                <img src="https://fursone.com/wp-content/uploads/2026/02/knitted-embroidery-fabric-textile-fursone-002-scaled.jpg" alt="Sustainable eco fabric development" loading="lazy" width="800" height="600">
+            </div>
+            <div class="right-content">
+                <span class="case-label">Sustainable Fashion</span>
+                <h2>Rapid Delivery of GRS-Certified Eco Fabrics</h2>
+                <p><strong>Challenge:</strong> A Scandinavian brand faced a supply chain crisis when their original supplier cancelled a recycled polyester order 4 weeks before launch.</p>
+                <p><strong>Solution:</strong> Leveraging our Ready-Stock Eco Yarn inventory, Fursone produced lab dips in 3 days and delivered 2,000 meters of GRS-certified fabric in just 25 days.</p>
+                <div class="btn-group">
+                    <a href="/services/ready-stock" class="btn btn-primary">Check Eco Stock</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-nav">
+            <div class="nav-arrow up-btn">▴</div>
+            <div class="dots-wrapper">
+                <div class="dot active" data-target="0"></div>
+                <div class="dot" data-target="1"></div>
+                <div class="dot" data-target="2"></div>
+            </div>
+            <div class="nav-arrow down-btn">▾</div>
+        </div>
+
+    </div>
+
+    <script>
+    (function() {
+        const scope = document.getElementById('b2b-split-slider');
+        const slides = scope.querySelectorAll('.slide-item');
+        const dots = scope.querySelectorAll('.dot');
+        const upBtn = scope.querySelector('.up-btn');
+        const downBtn = scope.querySelector('.down-btn');
+        let currentIndex = 0;
+        const totalSlides = slides.length;
+
+        function goToSlide(index) {
+            if (index < 0) index = totalSlides - 1;
+            if (index >= totalSlides) index = 0;
+            currentIndex = index;
+
+            slides.forEach(s => s.classList.remove('active'));
+            slides[currentIndex].classList.add('active');
+
+            dots.forEach(d => d.classList.remove('active'));
+            dots[currentIndex].classList.add('active');
+        }
+
+        dots.forEach((dot, idx) => {
+            dot.addEventListener('click', () => goToSlide(idx));
+        });
+
+        upBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+        downBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
+    })();
+    </script>
+</section>
+
+<!-- ========================= 5.5.latest-blog-section.html ========================= -->
+<section id="latest-blog-section">
+    <style>
+        #latest-blog-section {
+            background-color: var(--bg-primary, #f3f2e6);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #latest-blog-section .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        #latest-blog-section h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            line-height: 1.3;
+            color: var(--text-main, #26292a);
+            margin: 0 0 15px 0;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        #latest-blog-section .intro-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-main, #26292a);
+            margin: 0 auto 45px auto;
+            font-weight: 300;
+            text-align: center;
+            max-width: 760px;
+            opacity: 0.9;
+        }
+
+        #latest-blog-section .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        #latest-blog-section .blog-card {
+            background: #ffffff;
+            border: 1px solid rgba(38, 41, 42, 0.1);
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            min-height: 280px;
+            transition: all 0.25s ease;
+        }
+
+        #latest-blog-section .blog-card.is-skeleton {
+            pointer-events: none;
+        }
+
+        #latest-blog-section .skeleton-media,
+        #latest-blog-section .skeleton-line {
+            background: linear-gradient(90deg, rgba(217, 213, 201, 0.45) 0%, rgba(255, 255, 255, 0.92) 50%, rgba(217, 213, 201, 0.45) 100%);
+            background-size: 200% 100%;
+            animation: blogSkeletonPulse 1.6s ease-in-out infinite;
+        }
+
+        #latest-blog-section .skeleton-media {
+            width: 100%;
+            height: 220px;
+            border-bottom: 1px solid rgba(38, 41, 42, 0.08);
+        }
+
+        #latest-blog-section .skeleton-line {
+            border-radius: 999px;
+            height: 11px;
+            margin-bottom: 12px;
+        }
+
+        #latest-blog-section .skeleton-line.date {
+            width: 34%;
+        }
+
+        #latest-blog-section .skeleton-line.title {
+            width: 78%;
+            height: 16px;
+            margin-bottom: 16px;
+        }
+
+        #latest-blog-section .skeleton-line.copy {
+            width: 100%;
+        }
+
+        #latest-blog-section .skeleton-line.copy.short {
+            width: 72%;
+        }
+
+        #latest-blog-section .skeleton-line.link {
+            width: 40%;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+        @keyframes blogSkeletonPulse {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        #latest-blog-section .blog-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--text-main, #26292a);
+            box-shadow: 0 10px 24px rgba(38, 41, 42, 0.08);
+        }
+
+        #latest-blog-section .blog-date {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 14px;
+        }
+
+        #latest-blog-section .blog-title {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 24px;
+            line-height: 1.35;
+            color: var(--text-main, #26292a);
+            margin: 0 0 14px 0;
+            font-weight: 500;
+        }
+
+        #latest-blog-section .blog-excerpt {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            line-height: 1.75;
+            color: var(--text-main, #26292a);
+            opacity: 0.88;
+            margin: 0 0 20px 0;
+            flex: 1;
+        }
+
+        #latest-blog-section .blog-link {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-main, #26292a);
+            border-bottom: 1px solid var(--text-main, #26292a);
+            width: fit-content;
+            padding-bottom: 2px;
+        }
+
+        #latest-blog-section .cta-wrapper {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        #latest-blog-section .cta-button {
+            background-color: var(--cta-button, #934d34);
+            color: var(--cta-text, #f3f2e6);
+            border: 1px solid var(--cta-button, #934d34);
+            padding: 12px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        #latest-blog-section .cta-button:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+
+        @media (max-width: 1024px) {
+            #latest-blog-section .blog-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #latest-blog-section .container {
+                padding: 0 20px;
+            }
+
+            #latest-blog-section {
+                padding: 56px 0 !important;
+            }
+
+            #latest-blog-section .blog-grid {
+                display: grid !important;
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 14px !important;
+                width: 100% !important;
+                overflow: visible !important;
+                margin-right: 0 !important;
+                padding-right: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            #latest-blog-section h2 {
+                font-size: 28px;
+                text-align: left;
+            }
+
+            #latest-blog-section .intro-text {
+                text-align: left;
+                margin-bottom: 24px;
+                font-size: 13px;
+                line-height: 1.55;
+            }
+
+            #latest-blog-section .blog-card {
+                overflow: hidden;
+                min-height: auto;
+                flex: 0 0 auto !important;
+            }
+
+            #latest-blog-section .blog-title {
+                font-size: 18px;
+                line-height: 1.35;
+            }
+
+            #latest-blog-section .blog-date,
+            #latest-blog-section .blog-link {
+                font-size: 10px;
+                letter-spacing: 0.9px;
+            }
+
+            #latest-blog-section .cta-wrapper {
+                text-align: left;
+            }
+
+            #latest-blog-section .cta-button {
+                background: transparent;
+                color: #26292a;
+                border: none;
+                border-bottom: 1px solid #26292a;
+                padding: 0 0 2px 0;
+                margin: 0;
+                font-size: 11px;
+                font-weight: 600;
+                width: auto;
+            }
+
+            #latest-blog-section .skeleton-media,
+            #latest-blog-section .blog-card-image {
+                height: 140px !important;
+                min-height: 140px !important;
+                max-height: 140px !important;
+            }
+
+            #latest-blog-section .blog-card-content {
+                padding: 16px !important;
+            }
+
+            #latest-blog-section .blog-excerpt {
+                font-size: 12px;
+                line-height: 1.55;
+                margin-bottom: 16px;
+            }
+        }
+    
+        #blog-list-section .blog-card-image, #latest-blog-section .blog-card-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(38, 41, 42, 0.1);
+        }
+        #blog-list-section .blog-card-content, #latest-blog-section .blog-card-content {
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+        @media (max-width: 768px) {
+            #blog-list-section .blog-card-content, #latest-blog-section .blog-card-content {
+                padding: 24px;
+            }
+            #blog-list-section .blog-card-image, #latest-blog-section .blog-card-image {
+                height: 250px !important;
+                min-height: 250px !important;
+                max-height: 250px !important;
+                object-fit: cover !important;
+                display: block !important;
+                width: 100% !important;
+                position: relative !important;
+                border-radius: 0 !important;
+            }
+        }
+    
+    </style>
+
+    <div class="container">
+        <h2>Latest From Our Blog</h2>
+        <p class="intro-text">Read the newest sourcing insights, textile trend analysis, and factory expertise from our team.</p>
+
+        <div class="blog-grid" id="home-latest-blog-grid" aria-live="polite"></div>
+
+        <div class="cta-wrapper">
+            <a href="/blog/" class="cta-button">View All Articles</a>
+        </div>
+    </div>
+
+    <script>
+    (function () {
+        const grid = document.getElementById('home-latest-blog-grid');
+        if (!grid) return;
+        const targetCount = window.matchMedia('(max-width: 768px)').matches ? 2 : 3;
+
+        const fallbackPosts = [
+            {
+                title: 'How to Source Luxury-Look Tweed Without European MOQs',
+                excerpt: 'A practical sourcing framework for brands that need premium texture, lower sampling risk, and faster factory feedback.',
+                date: 'Factory Insight',
+                link: '/blog/'
+            },
+            {
+                title: 'What Fashion Buyers Check Before Approving Knit Fabric Samples',
+                excerpt: 'Review GSM, recovery, hand feel, and sampling notes before you commit to development or ready-stock programs.',
+                date: 'Buyer Guide',
+                link: '/blog/'
+            },
+            {
+                title: 'Ready Stock vs Custom Development: Which Route Fits Your Season?',
+                excerpt: 'Compare speed, MOQ, exclusivity, and production control to choose the right sourcing model for your next collection.',
+                date: 'Sourcing Playbook',
+                link: '/blog/'
+            }
+        ];
+
+        function stripHtml(input) {
+            return input.replace(/<[^>]*>/g, '').replace(/\s+/g, ' ').trim();
+        }
+
+        function escapeHtml(input) {
+            return String(input || '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function formatDate(dateStr) {
+            const d = new Date(dateStr);
+            if (Number.isNaN(d.getTime())) return '';
+            return d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+        }
+
+        function renderSkeletons(count) {
+            grid.innerHTML = Array.from({ length: count }).map(() => `
+                <article class="blog-card is-skeleton" aria-hidden="true">
+                    <div class="skeleton-media"></div>
+                    <div class="blog-card-content">
+                        <div class="skeleton-line date"></div>
+                        <div class="skeleton-line title"></div>
+                        <div class="skeleton-line copy"></div>
+                        <div class="skeleton-line copy short"></div>
+                        <div class="skeleton-line link"></div>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderCards(cards) {
+            grid.innerHTML = cards.map((card) => {
+                const imgHtml = card.imgUrl
+                    ? `<img src="${escapeHtml(card.imgUrl)}" alt="${escapeHtml(card.imgAlt || card.title)}" class="blog-card-image" loading="lazy">`
+                    : '';
+
+                return `
+                    <a href="${escapeHtml(card.link || '/blog/')}" class="blog-card">
+                        ${imgHtml}
+                        <div class="blog-card-content">
+                            <div class="blog-date">${escapeHtml(card.date || 'Blog')}</div>
+                            <h3 class="blog-title">${escapeHtml(card.title || 'Untitled')}</h3>
+                            <p class="blog-excerpt">${escapeHtml(card.excerpt || '')}</p>
+                            <span class="blog-link">Read Article</span>
+                        </div>
+                    </a>
+                `;
+            }).join('');
+        }
+
+        renderSkeletons(targetCount);
+
+        fetch('/wp-json/wp/v2/posts?per_page=6&_embed')
+            .then((res) => res.ok ? res.json() : Promise.reject(new Error('Failed to load posts')))
+            .then((posts) => {
+                if (!Array.isArray(posts) || posts.length === 0) {
+                    renderCards(fallbackPosts.slice(0, targetCount));
+                    return;
+                }
+
+                const seen = new Set();
+                const uniquePosts = posts.filter((post) => {
+                    const key = post?.link || post?.slug || post?.id;
+                    if (!key || seen.has(key)) return false;
+                    seen.add(key);
+                    return true;
+                }).slice(0, targetCount);
+
+                if (!uniquePosts.length) {
+                    renderCards(fallbackPosts.slice(0, targetCount));
+                    return;
+                }
+
+                renderCards(uniquePosts.map((post) => {
+                    const title = stripHtml(post?.title?.rendered || 'Untitled');
+                    const excerptRaw = post?.excerpt?.rendered || '';
+                    const excerpt = stripHtml(excerptRaw).slice(0, window.matchMedia('(max-width: 768px)').matches ? 92 : 140);
+                    const date = formatDate(post?.date || '');
+                    const link = post?.link || '/blog/';
+                    let imgUrl = '';
+                    let imgAlt = title;
+
+                    if (post._embedded && post._embedded['wp:featuredmedia'] && post._embedded['wp:featuredmedia'][0]) {
+                        const media = post._embedded['wp:featuredmedia'][0];
+                        imgUrl = media.source_url || '';
+                        imgAlt = media.alt_text || title;
+                        if (media.media_details && media.media_details.sizes) {
+                            imgUrl = media.media_details.sizes.medium_large?.source_url
+                                || media.media_details.sizes.medium?.source_url
+                                || media.source_url
+                                || '';
+                        }
+                    }
+
+                    return {
+                        title,
+                        excerpt: `${excerpt}${excerptRaw && stripHtml(excerptRaw).length > excerpt.length ? '...' : ''}`,
+                        date,
+                        link,
+                        imgUrl,
+                        imgAlt
+                    };
+                }));
+            })
+            .catch(() => {
+                renderCards(fallbackPosts.slice(0, targetCount));
+            });
+    })();
+    </script>
+</section>
+
+<!-- ========================= 6.faq-section.html ========================= -->
+<section id="faq-section">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the MOQ for custom fabric orders from Fursone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Our Minimum Order Quantity (MOQ) for custom yarn-dyed or textured fabrics typically starts from 1000 meters per color. For in-stock items in our sample library, we offer flexible minimums starting from 100 meters for sampling."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can Fursone replicate European luxury fabrics?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We specialize in analyzing and reproducing high-end European tweed and knit structures. We can match weight, texture, and composition while offering competitive pricing."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does Fursone export textiles to international markets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Fursone is an established global textile exporter shipping to fashion brands in North America, Europe, and Asia. We comply with international testing standards (Oeko-Tex, REACH) and handle export logistics."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the production lead time for bulk fabric orders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Production lead times depend on yarn availability and order volume. Standard bulk production typically takes 25-35 days after lab dip approval. Rush options are available for urgent fashion seasons."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I visit Fursone's mill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We welcome fashion designers and buyers to visit our facility to see our production lines and explore our extensive fabric library. Please contact us to schedule a factory tour."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer fabric swatches for sampling?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide A4 swatches or sample yardage for designers to test hand-feel and drape. Contact our sales team to request our latest collection books."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What testing standards do your fabrics meet?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "All Fursone fabrics undergo rigorous internal testing for shrinkage, colorfastness, and pilling. We can also provide third-party test reports (SGS, Intertek) upon request to meet specific market requirements."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer sustainable or eco-friendly options?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We offer a range of sustainable fabrics using recycled polyester (GRS certified), organic cotton, and eco-friendly dyeing processes to support sustainable fashion initiatives."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        #faq-section {
+            background-color: var(--bg-secondary, #d9d5c9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #faq-section .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        #faq-section h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            line-height: 1.3;
+            color: var(--text-main, #26292a);
+            margin-bottom: 40px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        #faq-section .faq-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns layout */
+            gap: 30px;
+            align-items: start; /* Prevent same-row cards from visually expanding together */
+        }
+
+        /* Removed column wrappers styles */
+
+        #faq-section .faq-item {
+            background-color: #ffffff;
+            border: 1px solid rgba(38, 41, 42, 0.1);
+            transition: all 0.3s ease;
+            height: auto;
+            border-radius: 4px;
+        }
+
+        #faq-section .faq-item:hover {
+            border-color: var(--text-main, #26292a);
+            box-shadow: 0 5px 15px rgba(38, 41, 42, 0.05);
+        }
+
+        #faq-section .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-main, #26292a);
+            line-height: 1.4;
+        }
+
+        #faq-section .faq-icon {
+            font-size: 20px;
+            font-weight: 300;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 15px;
+        }
+
+        #faq-section .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        #faq-section .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            padding: 0 30px;
+        }
+
+        #faq-section .faq-answer p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text-main, #26292a);
+            font-weight: 300;
+            margin-bottom: 25px;
+            opacity: 0.9;
+        }
+
+        #faq-section .cta-wrapper {
+            text-align: center;
+            margin-top: 60px;
+            grid-column: 1 / -1; /* Span full width */
+        }
+
+        #faq-section .cta-button {
+            background-color: var(--cta-button, #934d34);
+            color: var(--cta-text, #f3f2e6);
+            border: 1px solid var(--cta-button, #934d34);
+            padding: 12px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+
+        #faq-section .cta-button:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+
+        @media (max-width: 1024px) {
+            #faq-section .faq-grid {
+                grid-template-columns: 1fr; /* Single column on tablet/mobile */
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #faq-section .container {
+                padding: 0 20px;
+            }
+
+            #faq-section h2 {
+                font-size: 32px;
+                text-align: left;
+                margin-bottom: 30px;
+            }
+
+            #faq-section .faq-question {
+                padding: 20px;
+                font-size: 15px;
+            }
+
+            #faq-section .faq-answer {
+                padding: 0 20px;
+            }
+
+            #faq-section .cta-wrapper {
+                text-align: left;
+                margin-top: 40px;
+            }
+
+            #faq-section .cta-button {
+                background: transparent;
+                color: #26292a;
+                border: none;
+                border-bottom: 1px solid #26292a;
+                padding: 0 0 2px 0;
+                margin: 0;
+                font-size: 11px;
+                font-weight: 600;
+                width: auto;
+            }
+            
+            #faq-section .cta-button:hover {
+                transform: none;
+                color: #26292a;
+                border-color: #26292a;
+            }
+        }
+    
+        #faq-section .faq-grid {
+            display: block;
+        }
+        #faq-section .faq-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+            gap: 30px;
+            width: 100%;
+        }
+        #faq-section .faq-column {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        @media (max-width: 1024px) {
+            #faq-section .faq-columns {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            #faq-section .faq-column {
+                gap: 20px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        
+        <div class="faq-grid">
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is the MOQ for custom fabric orders from Fursone?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Our Minimum Order Quantity (MOQ) for custom yarn-dyed or textured fabrics typically starts from 1000 meters per color. For in-stock items in our sample library, we offer flexible minimums starting from 100 meters for sampling.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can Fursone replicate European luxury fabrics?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. We specialize in analyzing and reproducing high-end European tweed and knit structures. We can match weight, texture, and composition while offering competitive pricing.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Does Fursone export textiles to international markets?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Fursone is an established global textile exporter shipping to fashion brands in North America, Europe, and Asia. We comply with international testing standards (Oeko-Tex, REACH) and handle export logistics.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What is the production lead time for bulk fabric orders?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Production lead times depend on yarn availability and order volume. Standard bulk production typically takes 25-35 days after lab dip approval. Rush options are available for urgent fashion seasons.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Can I visit Fursone's mill?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. We welcome fashion designers and buyers to visit our facility to see our production lines and explore our extensive fabric library. Please contact us to schedule a factory tour.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you offer fabric swatches for sampling?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes, we provide A4 swatches or sample yardage for designers to test hand-feel and drape. Contact our sales team to request our latest collection books.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    What testing standards do your fabrics meet?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>All Fursone fabrics undergo rigorous internal testing for shrinkage, colorfastness, and pilling. We can also provide third-party test reports (SGS, Intertek) upon request to meet specific market requirements.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Do you offer sustainable or eco-friendly options?
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>Absolutely. We offer a range of sustainable fabrics using recycled polyester (GRS certified), organic cotton, and eco-friendly dyeing processes to support sustainable fashion initiatives.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var section = document.getElementById('faq-section');
+        if (!section) return;
+
+        var faqList = section.querySelector('.faq-grid');
+        if (!faqList) return;
+
+        var items = section.querySelectorAll('.faq-item');
+
+        function syncFaqColumns() {
+            var existingColumns = faqList.querySelector('.faq-columns');
+
+            if (window.innerWidth <= 1024) {
+                if (existingColumns) {
+                    Array.from(existingColumns.querySelectorAll('.faq-item'))
+                        .sort(function(a, b) {
+                            return Number(a.dataset.faqOrder) - Number(b.dataset.faqOrder);
+                        })
+                        .forEach(function(item) {
+                            faqList.appendChild(item);
+                        });
+
+                    existingColumns.remove();
+                }
+
+                return;
+            }
+
+            var directItems = Array.from(faqList.querySelectorAll(':scope > .faq-item'));
+            if (!directItems.length) return;
+
+            directItems.forEach(function(item, index) {
+                item.dataset.faqOrder = String(index + 1);
+            });
+
+            var columns = document.createElement('div');
+            columns.className = 'faq-columns';
+
+            var leftColumn = document.createElement('div');
+            leftColumn.className = 'faq-column';
+
+            var rightColumn = document.createElement('div');
+            rightColumn.className = 'faq-column';
+
+            directItems.forEach(function(item, index) {
+                (index % 2 === 0 ? leftColumn : rightColumn).appendChild(item);
+            });
+
+            columns.appendChild(leftColumn);
+            columns.appendChild(rightColumn);
+            faqList.appendChild(columns);
+        }
+
+        syncFaqColumns();
+        window.addEventListener('resize', syncFaqColumns);
+
+        items.forEach(function(item) {
+            var question = item.querySelector('.faq-question');
+            var answer = item.querySelector('.faq-answer');
+            if (!question || !answer) return;
+
+            question.addEventListener('click', function() {
+                var isActive = item.classList.contains('active');
+
+                // Close all others
+                items.forEach(function(otherItem) {
+                    otherItem.classList.remove('active');
+                    var otherAnswer = otherItem.querySelector('.faq-answer');
+                    if(otherAnswer) otherAnswer.style.maxHeight = null;
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                    answer.style.maxHeight = answer.scrollHeight + "px";
+                }
+            });
+        });
+
+        if (!window.IntersectionObserver) return;
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    items.forEach(function(item, index) {
+                        setTimeout(function() {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 80);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        items.forEach(function(item) {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        observer.observe(faqList);
+    })();
+    </script>
+
+    <!-- FURSONE GLOBAL MOBILE OVERRIDES (EvergoCasa Minotti Standards) -->
+    <style>
+        @media (max-width: 768px) {
+            /* 1. Global Box Sizing & Body */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+            * {
+                box-sizing: border-box !important;
+            }
+
+            /* 2. Container Safety Margins */
+            #hero-minimalist-final .content-container,
+            .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 3. Section Breathing Room */
+            section {
+                padding: 50px 0 60px 0 !important;
+                margin: 0 !important;
+                overflow-x: hidden !important;
+            }
+            
+            /* Exceptions for full-bleed or hero */
+            #why-fursone-section .container,
+            #b2b-split-slider .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            #why-fursone-section .text-column,
+            #b2b-split-slider .right-content {
+                padding: 30px 20px 0 20px !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 4. Typography Hierarchy (Minotti Style) */
+            h1 {
+                font-size: 32px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 20px !important;
+                text-align: left !important;
+            }
+            
+            h2 {
+                font-size: 28px !important;
+                line-height: 1.25 !important;
+                margin-top: 0 !important;
+                margin-bottom: 16px !important;
+                text-align: left !important;
+            }
+
+            h3 {
+                font-size: 18px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+            }
+
+            p, .intro-text, .sub-text, .faq-answer p, .blog-excerpt, #why-fursone-section .feature-item p {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 24px !important;
+                text-align: left !important;
+                opacity: 0.85 !important;
+                font-weight: 300 !important;
+            }
+
+            /* Remove excessive margins from intro texts */
+            .intro-text {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            /* 5. Buttons (Underlined Text Links) */
+            .btn, .cta-button {
+                background: transparent !important;
+                color: var(--text-main, #26292a) !important;
+                border: none !important;
+                border-bottom: 1px solid var(--text-main, #26292a) !important;
+                padding: 0 0 4px 0 !important;
+                margin: 0 !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                width: auto !important;
+                display: inline-flex !important;
+                text-transform: uppercase !important;
+                letter-spacing: 1.5px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                justify-content: flex-start !important;
+            }
+
+            /* Restore Homepage Hero Button */
+            #hero-minimalist-final .btn-primary,
+            #hero-minimalist-final .btn {
+                padding: 10px 20px !important;
+                font-size: 10px !important;
+                font-weight: 600 !important;
+                flex: 0 1 auto !important;
+                background-color: #934d34 !important;
+                color: #f3f2e6 !important;
+                border: 1px solid #934d34 !important;
+                border-radius: 0 !important;
+                letter-spacing: 1.5px !important;
+                text-transform: uppercase !important;
+                text-align: center !important;
+                display: inline-flex !important;
+                margin: 0 auto !important;
+                box-shadow: none !important;
+                justify-content: center !important;
+            }
+            
+            .cta-wrapper {
+                text-align: left !important;
+                margin-top: 10px !important;
+                padding-bottom: 10px !important;
+            }
+
+            /* 6. Image Grids (Horizontal Scroll) */
+            .collections-grid,
+            .blog-grid {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 16px !important;
+                padding-bottom: 20px !important;
+                margin-left: 0 !important;
+                margin-right: -20px !important; /* Bleed out right edge */
+                padding-right: 40px !important; /* Add extra padding so the last item doesn't stick to the edge */
+                width: calc(100% + 20px) !important;
+            }
+            
+            .collections-grid::-webkit-scrollbar,
+            .blog-grid::-webkit-scrollbar {
+                display: none !important;
+            }
+            
+            .collection-card,
+            .blog-card {
+                flex: 0 0 85% !important;
+                scroll-snap-align: start !important;
+                height: auto !important; /* Allow card to adjust to content */
+            }
+
+            /* Fix image ratios */
+            .image-wrapper, .blog-card-image {
+                position: relative !important;
+                display: block !important;
+                overflow: hidden !important;
+                border-radius: 0 !important;
+            }
+            .image-wrapper {
+                padding-bottom: 120% !important; /* Elegant vertical rectangle */
+                height: 0 !important; /* Force padding-bottom to dictate height */
+            }
+            .blog-card-image {
+                height: 250px !important;
+                min-height: 250px !important;
+                max-height: 250px !important;
+                width: 100% !important;
+                object-fit: cover !important;
+            }
+            .image-wrapper img, .collection-image, img.bg-image {
+                height: 100% !important;
+                min-height: 100% !important;
+                max-height: none !important;
+                object-fit: cover !important;
+                width: 100% !important;
+                max-width: none !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                display: block !important;
+                border-radius: 0 !important;
+            }
+
+            /* 7. Manufacturing Section Fixes */
+            #manufacturing-section .capability-row {
+                flex-direction: column !important;
+                gap: 24px !important;
+                margin-bottom: 50px !important;
+            }
+            #manufacturing-section .image-col {
+                height: 350px !important;
+                width: 100% !important; /* Remove bleed to keep 20px breathing room */
+                margin-left: 0 !important; 
+            }
+            #manufacturing-section .text-col {
+                padding: 0 20px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* 8. FAQ specific */
+            .faq-question {
+                font-size: 16px !important;
+                padding: 20px !important;
+                align-items: center !important;
+            }
+            .faq-answer {
+                padding: 0 20px !important;
+            }
+                } /* End of @media (max-width: 768px) */
+
+                /* 9. Mobile Hero Centering Only */
+        @media (max-width: 768px) {
+
+        [id$="-hero"] .btn-group,
+        #hero-minimalist-final .btn-group {
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+        [id$="-hero"] .content-container,
+        #hero-minimalist-final .content-container {
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        [id$="-hero"] .text-content,
+        #hero-minimalist-final .text-content {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+
+        [id$="-hero"] h1,
+        #hero-minimalist-final h1,
+        [id$="-hero"] .sub-text,
+        #hero-minimalist-final .sub-text,
+        [id$="-hero"] .pre-header,
+        #hero-minimalist-final .pre-header {
+            text-align: center !important;
+        }
+
+        [id$="-hero"] .breadcrumb,
+        #hero-minimalist-final .breadcrumb {
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        [id$="-hero"] .btn,
+        #hero-minimalist-final .btn,
+        [id$="-hero"] .btn-primary,
+        #hero-minimalist-final .btn-primary {
+            justify-content: center !important;
+            margin: 0 auto !important;
+            display: inline-flex !important;
+        }
+    
+        }
+    </style>
+</section>

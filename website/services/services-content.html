@@ -1,0 +1,2104 @@
+<section id="services-hero">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Textile Manufacturing Services",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fursone Textile"
+      },
+      "serviceType": "B2B Textile Manufacturing",
+      "areaServed": "Global",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Fabric Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "In-Stock Sourcing"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Fabric Development"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <style>
+        #services-hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            color: #f3f2e6;
+            background-color: #26292a;
+        }
+        #services-hero img.bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        #services-hero .overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(38, 41, 42, 0.95) 0%, rgba(38, 41, 42, 0.8) 40%, rgba(38, 41, 42, 0.4) 100%);
+            z-index: 1;
+        }
+        #services-hero .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-body, 'Playfair', serif);
+            margin-bottom: 8px;
+        }
+        #services-hero .breadcrumb a {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(243, 242, 230, 0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        #services-hero .breadcrumb a:hover {
+            color: #f3f2e6;
+        }
+        #services-hero .breadcrumb span {
+            font-size: 10px;
+            color: rgba(243, 242, 230, 0.4);
+        }
+        #services-hero .content-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-left: 100px;
+            padding-right: 40px;
+            display: flex;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+        #services-hero .text-content {
+            max-width: 800px;
+            animation: servicesFadeInMove 1s ease-out forwards;
+        }
+        #services-hero .pre-header {
+            display: block;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            border-left: 3px solid #ffffff;
+            padding-left: 18px;
+            text-transform: uppercase;
+            color: #f9f9f9;
+        }
+        #services-hero h1 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: clamp(32px, 4.2vw, 52px);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 30px;
+            text-shadow: 0 5px 20px rgba(38, 41, 42, 0.5);
+            color: #f3f2e6;
+        }
+        #services-hero .sub-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            color: #f3f2e6;
+            font-weight: 400;
+            max-width: 650px;
+        }
+        #services-hero .btn {
+            padding: 16px 40px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        #services-hero .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #services-hero .btn-primary:hover {
+            background-color: transparent;
+            color: #f3f2e6;
+            border-color: #ffffff;
+        }
+        #services-hero .hero-highlights {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 640px;
+            margin-top: 22px;
+        }
+        #services-hero .hero-highlight {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border: 1px solid rgba(243, 242, 230, 0.22);
+            background: rgba(243, 242, 230, 0.08);
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            color: #f3f2e6;
+        }
+        @keyframes servicesFadeInMove {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            #services-hero {
+                height: auto !important;
+                min-height: 74svh !important;
+                padding: 108px 0 64px !important;
+                align-items: center;
+            }
+            #services-hero img.bg-image {
+                object-position: center bottom !important;
+            }
+            #services-hero .overlay-gradient {
+                background: rgba(38, 41, 42, 0.78);
+            }
+            #services-hero .breadcrumb {
+                display: none !important;
+            }
+            #services-hero .content-container {
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+                justify-content: center;
+                text-align: center;
+            }
+            #services-hero .text-content {
+                max-width: 100%;
+            }
+            #services-hero .pre-header {
+                border-left: none;
+                padding-left: 0;
+                margin-bottom: 12px;
+                font-size: 10px !important;
+                letter-spacing: 1.6px !important;
+            }
+            #services-hero h1 {
+                font-size: 24px !important;
+                line-height: 1.14 !important;
+                margin-bottom: 14px !important;
+                letter-spacing: -0.5px;
+                text-shadow: 0 2px 10px rgba(38, 41, 42, 0.3);
+            }
+            #services-hero .sub-text {
+                max-width: 100%;
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+                margin-bottom: 20px !important;
+            }
+            #services-hero .btn {
+                padding: 12px 24px !important;
+                font-size: 11px !important;
+                font-weight: 600 !important;
+            }
+            #services-hero .hero-highlights {
+                justify-content: center;
+                gap: 8px;
+                margin-top: 16px;
+            }
+            #services-hero .hero-highlight {
+                font-size: 10px;
+                padding: 10px 12px;
+            }
+        }
+    </style>
+
+    <img class="bg-image" src="https://fursone.com/wp-content/uploads/2026/04/jacquard-knit-fabric-manufacturer-002.jpg" width="1920" height="1080" alt="Wenzhou textile manufacturer Fursone factory custom fabric OEM and in-stock fabric sourcing">
+    <div class="overlay-gradient"></div>
+
+    <div class="content-container">
+        <div class="text-content">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span>/</span>
+                <span>Services</span>
+            </nav>
+            <span class="pre-header">Factory Workflow for Sourcing Teams</span>
+            <h1>Custom development, ready stock, and QC delivery in one workflow.</h1>
+            <p class="sub-text">Use one factory team for sample approval, production planning, and shipment follow-through—without splitting communication across suppliers.</p>
+            <a href="#contact" class="btn btn-primary">Plan Your Supply Route</a>
+            <div class="hero-highlights" aria-label="Service strengths">
+                <span class="hero-highlight">7-10 day lab dip</span>
+                <span class="hero-highlight">100m ready stock</span>
+                <span class="hero-highlight">4-stage QC</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var content = document.querySelector('#services-hero .text-content');
+        if (!content) return;
+        var handler = function() {
+            var scrolled = window.scrollY;
+            var opacity = 1 - (scrolled / 500);
+            var transform = 'translateY(' + (scrolled * 0.15) + 'px)';
+            if (opacity < 0) opacity = 0;
+            if (scrolled > 500) { opacity = 0; transform = 'translateY(75px)'; }
+            content.style.opacity = opacity;
+            content.style.transform = transform;
+        };
+        window.addEventListener('scroll', handler, { passive: true });
+    })();
+    </script>
+</section>
+
+
+<section id="services-overview">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSection",
+      "name": "Our Two Service Models",
+      "mainEntity": [
+        {
+          "@type": "Service",
+          "name": "Custom Manufacturing",
+          "url": "https://fursone.com/services/custom-manufacturing/"
+        },
+        {
+          "@type": "Service",
+          "name": "Ready Stock Sourcing",
+          "url": "https://fursone.com/services/ready-stock/"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        #services-overview {
+            background-color: var(--bg-primary, #f3f2e6);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #services-overview .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        #services-overview .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #services-overview .section-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 15px;
+            display: block;
+        }
+        #services-overview h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+        }
+        #services-overview .header-intro {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        #services-overview .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        @media (max-width: 768px) {
+            #services-overview .service-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        #services-overview .service-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(38, 41, 42, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        #services-overview .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(38, 41, 42, 0.15);
+        }
+        #services-overview .card-image-wrapper {
+            width: 100%;
+            height: 200px;
+            overflow: hidden;
+            position: relative;
+        }
+        #services-overview .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        #services-overview .service-card:hover .card-image-wrapper img {
+            transform: scale(1.08);
+        }
+        #services-overview .card-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 5px 12px;
+            z-index: 2;
+        }
+        #services-overview .card-badge.custom {
+            background: var(--text-main, #26292a);
+            color: #f3f2e6;
+        }
+        #services-overview .card-badge.stock {
+            background: var(--cta-button, #934d34);
+            color: #f3f2e6;
+        }
+        #services-overview .card-content {
+            padding: 35px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        #services-overview .card-moq {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 8px;
+        }
+        #services-overview .card-content h3 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 24px;
+            font-weight: 400;
+            color: var(--text-main, #26292a);
+            margin: 0 0 12px 0;
+        }
+        #services-overview .card-desc {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.85;
+            font-weight: 300;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        #services-overview .card-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 25px 0;
+        }
+        #services-overview .card-features li {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-main, #26292a);
+            opacity: 0.85;
+            padding: 6px 0;
+            padding-left: 18px;
+            position: relative;
+        }
+        #services-overview .card-features li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 6px;
+            height: 6px;
+            background: var(--cta-button, #934d34);
+            border-radius: 50%;
+        }
+        #services-overview .btn {
+            padding: 12px 30px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+            width: fit-content;
+        }
+        #services-overview .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #services-overview .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+    </style>
+
+    <div class="container">
+        <div class="header-section">
+            <span class="section-label">Our Service Models</span>
+            <h2>Two Ways to Source Premium Fabrics from China</h2>
+            <p class="header-intro">Sourcing fabric from a reliable China textile manufacturer should not be complicated. Choose between our in-stock program for speed or custom OEM development for exclusivity.</p>
+        </div>
+
+        <div class="service-grid">
+            <div class="service-card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge custom">Custom Manufacturing</span>
+                    <img src="https://fursone.com/wp-content/uploads/2026/04/premium-textile-fabric-wholesale-007.jpg" width="600" height="400" loading="lazy" alt="Custom fabric OEM manufacturing at Wenzhou textile factory Fursone China">
+                </div>
+                <div class="card-content">
+                    <span class="card-moq">MOQ: 1,000 Meters</span>
+                    <h3>Custom OEM/ODM Fabric Manufacturing</h3>
+                    <p class="card-desc">Develop brand-owned fabrics with a trusted textile manufacturer in Wenzhou. From fancy yarn engineering to Pantone-matched dyeing, your design is protected by NDA.</p>
+                    <ul class="card-features">
+                        <li>Fancy yarn R&D and custom texture development</li>
+                        <li>Pantone-accurate color matching with lab dips</li>
+                        <li>Full IP protection with signed NDA agreements</li>
+                        <li>25-35 days bulk production lead time</li>
+                    </ul>
+                    <a href="/services/custom-manufacturing/" class="btn btn-primary">Start Custom Project</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="card-image-wrapper">
+                    <span class="card-badge stock">Ready Stock</span>
+                    <img src="https://fursone.com/wp-content/uploads/2026/04/premium-textile-fabric-wholesale-001.jpg" width="600" height="400" loading="lazy" alt="In-stock fabric rolls ready to ship from Wenzhou China textile manufacturer Fursone factory">
+                </div>
+                <div class="card-content">
+                    <span class="card-moq">MOQ: 100 Meters</span>
+                    <h3>In-Stock Fabric Sourcing (100m MOQ)</h3>
+                    <p class="card-desc">Access 100+ premium tweed and knit patterns ready to ship from our China factory. No production wait, no minimum stress. Test the market with just 100 meters.</p>
+                    <ul class="card-features">
+                        <li>72-hour dispatch from our Wenzhou warehouse</li>
+                        <li>Full technical data sheet (TDS) included</li>
+                        <li>No lab dip required for standard stock items</li>
+                        <li>Consistent quality across re-orders</li>
+                    </ul>
+                    <a href="/services/ready-stock/" class="btn btn-primary">Browse Stock Inventory</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="services-custom">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Custom Textile Manufacturing",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fursone",
+        "url": "https://fursone.com"
+      },
+      "serviceType": "OEM/ODM Fabric Development",
+      "areaServed": "Global"
+    }
+    </script>
+
+    <style>
+        #services-custom {
+            background-color: var(--bg-secondary, #d9d5c9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #services-custom .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        #services-custom .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+        #services-custom .section-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 15px;
+            display: block;
+        }
+        #services-custom h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 38px;
+            line-height: 1.2;
+            color: var(--text-main, #26292a);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        #services-custom .intro-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            margin-bottom: 45px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        #services-custom .approach-list {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+        #services-custom .approach-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            border-left: 3px solid rgba(38, 41, 42, 0.15);
+            padding-left: 25px;
+        }
+        #services-custom .approach-item:last-child {
+            border-left-color: var(--cta-button, #934d34);
+        }
+        #services-custom .approach-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+        #services-custom .approach-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--cta-button, #934d34);
+        }
+        #services-custom .approach-content h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main, #26292a);
+            margin: 0 0 6px 0;
+        }
+        #services-custom .approach-content p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.8;
+            margin: 0;
+            font-weight: 300;
+        }
+        #services-custom .btn {
+            padding: 14px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+            width: fit-content;
+        }
+        #services-custom .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #services-custom .btn-primary:hover {
+            background-color: transparent;
+            color: var(--cta-button, #934d34);
+            border-color: var(--cta-button, #934d34);
+        }
+        #services-custom .visual-side {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #services-custom .visual-side img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(38, 41, 42, 0.1);
+        }
+        #services-custom .visual-side .moq-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(38, 41, 42, 0.06);
+        }
+        #services-custom .visual-side .moq-badge svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--cta-button, #934d34);
+            flex-shrink: 0;
+        }
+        #services-custom .visual-side .moq-badge span {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-main, #26292a);
+        }
+        #services-custom .visual-side .moq-badge strong {
+            font-weight: 600;
+            color: var(--cta-button, #934d34);
+        }
+        @media (max-width: 1024px) {
+            #services-custom .content-wrapper {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            #services-custom .visual-side {
+                order: -1;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="visual-side">
+                <img src="https://fursone.com/wp-content/uploads/2026/04/jacquard-knit-fabric-manufacturer-005.jpg" width="800" height="530" loading="lazy" alt="Custom fabric OEM weaving and yarn dyeing at Wenzhou textile factory Fursone China">
+                <div class="moq-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span>Minimum Order: <strong>1,000 meters per color</strong> for yarn stability and color consistency</span>
+                </div>
+            </div>
+            <div>
+                <span class="section-label">Option A — OEM/ODM Service</span>
+                <h2>Custom Fabric Manufacturing: OEM/ODM for Fashion Brands</h2>
+                <p class="intro-text">Need exclusive fabrics that define your collection? Our Wenzhou factory specializes in fancy yarn development and custom textile manufacturing for global fashion brands seeking differentiation.</p>
+                <div class="approach-list">
+                    <div class="approach-item">
+                        <div class="approach-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                        </div>
+                        <div class="approach-content">
+                            <h3>Yarn Engineering</h3>
+                            <p>We develop custom fancy yarns — bouclé, slub, feather, and metallic — to create unique textures that standard mills cannot replicate.</p>
+                        </div>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div class="approach-content">
+                            <h3>Pantone Dyeing</h3>
+                            <p>Precise color matching with lab dip approval process ensures your brand colors stay consistent across every production batch.</p>
+                        </div>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="approach-content">
+                            <h3>IP Protection</h3>
+                            <p>Your exclusive designs are protected by NDA. We never resell your patterns to third parties, ensuring your brand's uniqueness.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="/services/custom-manufacturing/" class="btn btn-primary">Request OEM Quote</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="services-instock">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "In-Stock Fabric Sourcing",
+      "provider": {
+        "@type": "Organization",
+        "name": "Fursone",
+        "url": "https://fursone.com"
+      },
+      "serviceType": "Ready Stock Fabric Supply",
+      "areaServed": "Global"
+    }
+    </script>
+
+    <style>
+        #services-instock {
+            background-color: var(--bg-primary, #f3f2e6);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #services-instock .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        #services-instock .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #services-instock .section-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 15px;
+            display: block;
+        }
+        #services-instock h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            line-height: 1.2;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        #services-instock .header-intro {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        #services-instock .stock-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        @media (max-width: 1024px) {
+            #services-instock .stock-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            #services-instock .stock-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        #services-instock .stock-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(38, 41, 42, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        #services-instock .stock-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(38, 41, 42, 0.15);
+        }
+        #services-instock .card-image-wrapper {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        #services-instock .card-image-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        #services-instock .stock-card:hover .card-image-wrapper img {
+            transform: scale(1.08);
+        }
+        #services-instock .card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        #services-instock .card-icon {
+            width: 45px;
+            height: 45px;
+            background: linear-gradient(135deg, var(--cta-button, #934d34) 0%, #a85f44 100%);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+        }
+        #services-instock .card-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: #ffffff;
+        }
+        #services-instock .card-content h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 15px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main, #26292a);
+            margin: 0 0 10px 0;
+        }
+        #services-instock .card-content p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.8;
+            margin: 0;
+            font-weight: 300;
+            flex: 1;
+        }
+        #services-instock .cta-wrapper {
+            text-align: center;
+        }
+        #services-instock .btn {
+            padding: 14px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #services-instock .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #services-instock .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+    </style>
+
+    <div class="container">
+        <div class="header-section">
+            <span class="section-label">Option B — Ready Stock Service</span>
+            <h2>In-Stock Fabric Sourcing: 100m MOQ from China Factory</h2>
+            <p class="header-intro">Speed matters in fashion. Our Wenzhou inventory gives you instant access to 100+ premium tweed and knit fabrics with 72-hour dispatch. Ideal for sampling and capsule collections.</p>
+        </div>
+
+        <div class="stock-grid">
+            <div class="stock-card">
+                <div class="card-image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/04/premium-textile-fabric-wholesale-009.jpg" width="600" height="400" loading="lazy" alt="Fabric rolls ready for fast dispatch from Wenzhou textile manufacturer Fursone factory China">
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg>
+                    </div>
+                    <h3>Lightning Speed</h3>
+                    <p>72-hour dispatch from our Wenzhou warehouse. No production queue, no waiting. Your fabric ships the moment you place your order.</p>
+                </div>
+            </div>
+            <div class="stock-card">
+                <div class="card-image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/04/jacquard-knit-fabric-manufacturer-005.jpg" width="600" height="400" loading="lazy" alt="Quality control inspection at Wenzhou textile manufacturer Fursone factory China">
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                    </div>
+                    <h3>Consistent Quality</h3>
+                    <p>Every stock item is produced to the same rigorous standards as our custom orders. Full TDS provided with each shipment for your peace of mind.</p>
+                </div>
+            </div>
+            <div class="stock-card">
+                <div class="card-image-wrapper">
+                    <img src="https://fursone.com/wp-content/uploads/2026/04/knitted-coating-fabric-supplier-001.jpg" width="600" height="400" loading="lazy" alt="Low MOQ in-stock fabric sampling from Wenzhou textile manufacturer Fursone China">
+                </div>
+                <div class="card-content">
+                    <div class="card-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                    </div>
+                    <h3>Low-Risk Testing</h3>
+                    <p>Test new trends with just 100 meters. Ideal for sample development, capsule collections, and market validation before committing to larger volumes.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-wrapper">
+            <a href="/services/ready-stock/" class="btn btn-primary">Shop In-Stock Fabrics</a>
+        </div>
+    </div>
+</section>
+
+
+<section id="services-solutions">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSection",
+      "name": "Solutions for Your Business",
+      "mainEntity": [
+        {
+          "@type": "Service",
+          "name": "For Designer Brands",
+          "serviceType": "Custom Fabric Development"
+        },
+        {
+          "@type": "Service",
+          "name": "For Garment Factories",
+          "serviceType": "Bulk Fabric Supply"
+        },
+        {
+          "@type": "Service",
+          "name": "For Fabric Wholesalers",
+          "serviceType": "Wholesale Fabric Distribution"
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        #services-solutions {
+            background-color: var(--bg-secondary, #d9d5c9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #services-solutions .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        #services-solutions .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #services-solutions .section-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 15px;
+            display: block;
+        }
+        #services-solutions h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            line-height: 1.2;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+        #services-solutions .header-intro {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        #services-solutions .sol-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        @media (max-width: 1024px) {
+            #services-solutions .sol-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            #services-solutions .sol-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        #services-solutions .sol-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(38, 41, 42, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        #services-solutions .sol-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(38, 41, 42, 0.15);
+        }
+        #services-solutions .sol-card .card-content {
+            padding: 35px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        #services-solutions .sol-number {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--cta-button, #934d34);
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+        #services-solutions .sol-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 10px;
+            display: block;
+        }
+        #services-solutions .sol-card h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main, #26292a);
+            margin: 0 0 8px 0;
+        }
+        #services-solutions .sol-target {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-main, #26292a);
+            opacity: 0.5;
+            margin-bottom: 15px;
+        }
+        #services-solutions .sol-best {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: var(--text-main, #26292a);
+            margin-bottom: 15px;
+            padding: 6px 12px;
+            background: rgba(147, 77, 52, 0.08);
+            display: inline-block;
+        }
+        #services-solutions .sol-desc {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.85;
+            margin-bottom: 25px;
+            flex: 1;
+        }
+        #services-solutions .btn {
+            padding: 12px 30px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+            width: fit-content;
+        }
+        #services-solutions .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #services-solutions .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+    </style>
+
+    <div class="container">
+        <div class="header-section">
+            <span class="section-label">Solutions by Business Type</span>
+            <h2>Fabric Sourcing Solutions from a China Textile Factory</h2>
+            <p class="header-intro">Whether you are a designer brand needing custom development or a wholesaler scaling inventory, our factory has a sourcing model built for your business.</p>
+        </div>
+
+        <div class="sol-grid">
+            <div class="sol-card">
+                <div class="card-content">
+                    <div class="sol-number">01</div>
+                    <span class="sol-label">Persona</span>
+                    <h3>For Designer Brands</h3>
+                    <p class="sol-target">Independent designers, boutique labels</p>
+                    <span class="sol-best">Best Fit: Custom Manufacturing</span>
+                    <p class="sol-desc">Develop exclusive signature fabrics that define your collection. Full IP protection with NDA, small-batch customization from 1,000 meters.</p>
+                    <a href="#contact" class="btn btn-primary">Get Custom Quote</a>
+                </div>
+            </div>
+            <div class="sol-card">
+                <div class="card-content">
+                    <div class="sol-number">02</div>
+                    <span class="sol-label">Persona</span>
+                    <h3>For Garment Factories</h3>
+                    <p class="sol-target">Production facilities, contract manufacturers</p>
+                    <span class="sol-best">Best Fit: In-Stock Sourcing</span>
+                    <p class="sol-desc">Maintain consistent production with reliable fabric supply from a Wenzhou manufacturer. 72-hour dispatch and bulk pricing.</p>
+                    <a href="#contact" class="btn btn-primary">Check Stock Availability</a>
+                </div>
+            </div>
+            <div class="sol-card">
+                <div class="card-content">
+                    <div class="sol-number">03</div>
+                    <span class="sol-label">Persona</span>
+                    <h3>For Fabric Wholesalers</h3>
+                    <p class="sol-target">Fabric distributors, textile traders</p>
+                    <span class="sol-best">Best Fit: Both Models</span>
+                    <p class="sol-desc">Expand your catalog with 100+ in-stock SKUs or develop wholesale exclusives through custom manufacturing. Re-order with 95% consistency.</p>
+                    <a href="#contact" class="btn btn-primary">Request Wholesale Pricing</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="services-trust">
+    <style>
+        #services-trust { background-color: var(--bg-primary, #f3f2e6); padding: 80px 0; }
+        #services-trust .container { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
+        #services-trust .header-section { text-align: center; margin-bottom: 50px; }
+        #services-trust .header-section .section-label { font-family: var(--font-body, 'Playfair', serif); font-size: 12px; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--cta-button, #934d34); margin-bottom: 15px; display: block; }
+        #services-trust .header-section h2 { font-family: var(--font-heading, 'Playfair Display', serif); font-size: 36px; font-weight: 400; line-height: 1.2; color: var(--text-main, #26292a); margin-bottom: 15px; }
+        #services-trust .metrics-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; margin-bottom: 50px; }
+        #services-trust .metric-card { background: #ffffff; border-radius: 16px; padding: 35px 25px; text-align: center; box-shadow: 0 8px 30px rgba(38,41,42,0.08); transition: all 0.4s cubic-bezier(0.25,1,0.5,1); }
+        #services-trust .metric-card:hover { transform: translateY(-5px); box-shadow: 0 15px 40px rgba(38,41,42,0.12); }
+        #services-trust .metric-number { font-family: var(--font-heading, 'Playfair Display', serif); font-size: 42px; font-weight: 400; color: var(--cta-button, #934d34); line-height: 1; margin-bottom: 8px; }
+        #services-trust .metric-label { font-family: var(--font-body, 'Playfair', serif); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main, #26292a); }
+        #services-trust .cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 25px; }
+        @media (max-width: 1024px) {
+            #services-trust .metrics-grid, #services-trust .cert-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media (max-width: 768px) {
+            #services-trust .metrics-grid, #services-trust .cert-grid { grid-template-columns: repeat(2, 1fr); gap: 15px; }
+            #services-trust .metric-card { padding: 25px 15px; }
+            #services-trust .metric-number { font-size: 32px; }
+        }
+        #services-trust .cert-card { background: #ffffff; border: 1px solid rgba(38,41,42,0.1); border-radius: 12px; padding: 30px 20px; text-align: center; transition: all 0.3s; }
+        #services-trust .cert-card:hover { border-color: var(--cta-button, #934d34); transform: translateY(-3px); }
+        #services-trust .cert-card svg { width: 36px; height: 36px; fill: var(--cta-button, #934d34); margin-bottom: 12px; }
+        #services-trust .cert-card .cert-name { font-family: var(--font-body, 'Playfair', serif); font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-main, #26292a); display: block; }
+        #services-trust .cert-card .cert-desc { font-family: var(--font-body, 'Playfair', serif); font-size: 11px; font-weight: 400; color: var(--text-main, #26292a); opacity: 0.6; display: block; margin-top: 4px; }
+    </style>
+    <div class="container">
+        <div class="header-section">
+            <span class="section-label">Trust & Expertise</span>
+            <h2>Why Global Brands Trust Fursone for Fabric Sourcing</h2>
+        </div>
+        <div class="metrics-grid">
+            <div class="metric-card"><div class="metric-number">30+</div><div class="metric-label">Years Heritage</div></div>
+            <div class="metric-card"><div class="metric-number">500+</div><div class="metric-label">Global Clients</div></div>
+            <div class="metric-card"><div class="metric-number">50+</div><div class="metric-label">Countries Served</div></div>
+            <div class="metric-card"><div class="metric-number">10M+</div><div class="metric-label">Meters Annually</div></div>
+        </div>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <svg viewBox="0 0 24 24"><path d="M12 2L14.5 9H22L16 13.5L18.5 21L12 16.5L5.5 21L8 13.5L2 9H9.5L12 2Z"/></svg>
+                <span class="cert-name">ISO 9001</span><span class="cert-desc">Quality Management</span>
+            </div>
+            <div class="cert-card">
+                <svg viewBox="0 0 24 24"><path d="M12 1L3 5V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V5L12 1Z"/></svg>
+                <span class="cert-name">Oeko-Tex</span><span class="cert-desc">Standard 100</span>
+            </div>
+            <div class="cert-card">
+                <svg viewBox="0 0 24 24"><path d="M17 8C8 10 5.9 16.17 3.82 21.34L5.71 22L6.66 19.7C7.14 19.87 7.64 20 8 20C19 20 22 3 22 3C21 5 14 5.25 9 6.25C4 7.25 2 11.5 2 13.5C2 15.5 3.75 17.25 3.75 17.25C7 8 17 8 17 8Z"/></svg>
+                <span class="cert-name">GRS</span><span class="cert-desc">Recycled Materials</span>
+            </div>
+            <div class="cert-card">
+                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z"/></svg>
+                <span class="cert-name">BSCI</span><span class="cert-desc">Social Compliance</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="services-faq">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is the lead time for custom manufacturing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Custom development typically takes 7-10 days for hand-loom sampling and 25-35 days for bulk production, depending on yarn complexity and order volume."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer shipping services?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We partner with global logistics providers and can handle DDP shipping to your warehouse in the USA, Europe, or Asia."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I combine in-stock and custom orders?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. Many clients use our in-stock fabrics for their core collection and develop custom hero fabrics for the season."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What is the difference between your MOQs?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "In-stock sourcing starts at 100 meters. Custom manufacturing requires 1,000 meters per color to ensure yarn stability and color consistency."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I get samples before placing an order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Absolutely. We provide free A4 fabric samples for evaluation. For custom developments, we offer sampling with lab dips and test reports."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you ensure quality consistency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We implement a 4-stage quality control process: raw material inspection, in-process QC, finished fabric testing, and pre-shipment verification."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        #services-faq {
+            background-color: var(--bg-secondary, #d9d5c9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #services-faq .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #services-faq h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 32px;
+            line-height: 1.3;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-align: center;
+        }
+        #services-faq .section-subtitle {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        #services-faq .faq-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+            gap: 20px;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        #services-faq .faq-item {
+            background: #ffffff;
+            border: 1px solid rgba(38, 41, 42, 0.1);
+            transition: all 0.3s ease;
+            height: auto;
+        }
+        #services-faq .faq-item:hover {
+            border-color: var(--cta-button, #934d34);
+            box-shadow: 0 8px 24px rgba(38, 41, 42, 0.08);
+        }
+        #services-faq .faq-item.active {
+            border-color: var(--cta-button, #934d34);
+            box-shadow: 0 12px 32px rgba(38, 41, 42, 0.1);
+        }
+        #services-faq .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        #services-faq .faq-question h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main, #26292a);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        #services-faq .faq-toggle {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(38, 41, 42, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+        #services-faq .faq-item.active .faq-toggle {
+            background-color: var(--cta-button, #934d34);
+            border-color: var(--cta-button, #934d34);
+            transform: rotate(45deg);
+        }
+        #services-faq .faq-toggle svg {
+            width: 14px;
+            height: 14px;
+            fill: var(--text-main, #26292a);
+            transition: fill 0.3s ease;
+        }
+        #services-faq .faq-item.active .faq-toggle svg {
+            fill: var(--cta-text, #f3f2e6);
+        }
+        #services-faq .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        #services-faq .faq-item.active .faq-answer {
+            max-height: 350px;
+        }
+        #services-faq .faq-answer p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.9;
+            font-weight: 300;
+            margin: 0;
+            padding: 0 30px 30px 30px;
+        }
+        #services-faq .faq-answer p strong {
+            font-weight: 600;
+            color: var(--text-main, #26292a);
+        }
+        #services-faq .cta-wrapper {
+            text-align: center;
+        }
+        #services-faq .btn {
+            padding: 14px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #services-faq .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #services-faq .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+        @media (max-width: 768px) {
+            #services-hero .content-container,
+            #services-overview .container,
+            #services-custom .container,
+            #services-instock .container,
+            #services-solutions .container,
+            #services-trust .container,
+            #services-faq .container {
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+                box-sizing: border-box !important;
+            }
+            #services-hero h1,
+            #services-overview h2,
+            #services-custom h2,
+            #services-instock h2,
+            #services-solutions h2,
+            #services-trust h2,
+            #services-faq h2 {
+                font-size: 30px !important;
+                line-height: 1.25 !important;
+            }
+            #services-hero .sub-text,
+            #services-overview p,
+            #services-custom p,
+            #services-instock p,
+            #services-solutions p,
+            #services-trust p,
+            #services-faq .faq-answer p {
+                font-size: 17px !important;
+                line-height: 1.7 !important;
+            }
+            #services-faq .section-subtitle {
+                font-size: 13px !important;
+                letter-spacing: 1.2px !important;
+            }
+            #services-faq .faq-list {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            #services-faq .faq-question {
+                padding: 20px 22px;
+            }
+            #services-faq .faq-question h3 {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+            }
+            #services-faq .faq-answer p {
+                padding: 0 22px 22px 22px;
+            }
+            #services-hero .btn,
+            #services-overview .btn,
+            #services-custom .btn,
+            #services-instock .btn,
+            #services-solutions .btn,
+            #services-trust .btn,
+            #services-faq .btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: auto !important;
+                padding: 12px 22px !important;
+                font-size: 13px !important;
+                letter-spacing: 1.2px !important;
+                background-color: #934d34 !important;
+                color: #f3f2e6 !important;
+                border: 1px solid #934d34 !important;
+            }
+            #services-faq .btn:hover {
+                background-color: transparent !important;
+                color: var(--text-main, #26292a) !important;
+                border: 1px solid var(--text-main, #26292a) !important;
+                border-bottom: none !important;
+            }
+        }
+    
+        #services-faq .faq-list {
+            display: block;
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        #services-faq .faq-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+            gap: 20px;
+            width: 100%;
+        }
+        #services-faq .faq-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        @media (max-width: 768px) {
+            #services-faq .faq-columns {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            #services-faq .faq-column {
+                gap: 15px;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h2>Frequently Asked Questions About Fabric Sourcing from China</h2>
+        <p class="section-subtitle">Get the Answers You Need</p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is the lead time for custom manufacturing?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Custom development takes <strong>7-10 days</strong> for sampling and <strong>25-35 days</strong> for bulk production from our Wenzhou textile factory. Lead time depends on yarn complexity and order volume.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer shipping services?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. We handle <strong>DDP (Delivered Duty Paid)</strong> shipping to the USA, Europe, and Asia. All import duties and logistics are managed by us for a seamless experience.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I combine in-stock and custom orders?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Many clients use our in-stock fabrics for core collections and develop custom fabrics for seasonal hero pieces, balancing speed with exclusivity.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>What is the difference between your MOQs?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>In-stock sourcing starts at <strong>100 meters</strong> (ready to ship). Custom manufacturing requires <strong>1,000 meters per color</strong> to ensure yarn stability and color consistency across the batch.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can I get samples before placing an order?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. Free <strong>A4 fabric samples</strong> available for evaluation. Custom developments include lab dips and detailed test reports before production.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How do you ensure quality consistency?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>We implement a <strong>4-stage QC process</strong>: raw material inspection, in-process quality check, finished fabric testing, and pre-shipment verification. Every batch is tested.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-wrapper">
+            <a href="#contact" class="btn btn-primary">Contact Our Sourcing Team</a>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var section = document.getElementById('services-faq');
+        if (!section) return;
+
+        var faqList = section.querySelector('.faq-list');
+        if (!faqList) return;
+
+        var items = section.querySelectorAll('.faq-item');
+
+        function syncFaqColumns() {
+            var existingColumns = faqList.querySelector('.faq-columns');
+
+            if (window.innerWidth <= 768) {
+                if (existingColumns) {
+                    Array.from(existingColumns.querySelectorAll('.faq-item'))
+                        .sort(function(a, b) {
+                            return Number(a.dataset.faqOrder) - Number(b.dataset.faqOrder);
+                        })
+                        .forEach(function(item) {
+                            faqList.appendChild(item);
+                        });
+
+                    existingColumns.remove();
+                }
+
+                return;
+            }
+
+            var directItems = Array.from(faqList.querySelectorAll(':scope > .faq-item'));
+            if (!directItems.length) return;
+
+            directItems.forEach(function(item, index) {
+                item.dataset.faqOrder = String(index + 1);
+            });
+
+            var columns = document.createElement('div');
+            columns.className = 'faq-columns';
+
+            var leftColumn = document.createElement('div');
+            leftColumn.className = 'faq-column';
+
+            var rightColumn = document.createElement('div');
+            rightColumn.className = 'faq-column';
+
+            directItems.forEach(function(item, index) {
+                (index % 2 === 0 ? leftColumn : rightColumn).appendChild(item);
+            });
+
+            columns.appendChild(leftColumn);
+            columns.appendChild(rightColumn);
+            faqList.appendChild(columns);
+        }
+
+        syncFaqColumns();
+        window.addEventListener('resize', syncFaqColumns);
+
+        items.forEach(function(item) {
+            var question = item.querySelector('.faq-question');
+            if (!question) return;
+
+            question.addEventListener('click', function() {
+                var isActive = item.classList.contains('active');
+
+                items.forEach(function(otherItem) {
+                    otherItem.classList.remove('active');
+                });
+
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        if (!window.IntersectionObserver) return;
+
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    items.forEach(function(item, index) {
+                        setTimeout(function() {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 80);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        items.forEach(function(item) {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px)';
+            item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+        });
+
+        observer.observe(faqList);
+    })();
+    </script>
+</section>
+
+<!-- FURSONE GLOBAL MOBILE OVERRIDES (EvergoCasa Minotti Standards) -->
+    <style>
+        @media (max-width: 768px) {
+            /* 1. Global Box Sizing & Body */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+            * {
+                box-sizing: border-box !important;
+            }
+
+            /* 2. Container Safety Margins */
+            #hero-minimalist-final .content-container,
+            .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 3. Section Breathing Room */
+            section {
+                padding: 50px 0 60px 0 !important;
+                margin: 0 !important;
+                overflow-x: hidden !important;
+            }
+            
+            /* Exceptions for full-bleed or hero */
+            #hero-minimalist-final {
+                padding: 0 !important;
+                height: 100svh !important;
+                min-height: 550px !important;
+            }
+            #why-fursone-section .container,
+            #b2b-split-slider .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            #why-fursone-section .text-column,
+            #b2b-split-slider .right-content {
+                padding: 30px 20px 0 20px !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 4. Typography Hierarchy (Minotti Style) */
+            h1 {
+                font-size: 32px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 20px !important;
+                text-align: left !important;
+            }
+            
+            h2 {
+                font-size: 28px !important;
+                line-height: 1.25 !important;
+                margin-top: 0 !important;
+                margin-bottom: 16px !important;
+                text-align: left !important;
+            }
+
+            h3 {
+                font-size: 18px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+            }
+
+            p, .intro-text, .sub-text, .faq-answer p, .blog-excerpt, #why-fursone-section .feature-item p {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 24px !important;
+                text-align: left !important;
+                opacity: 0.85 !important;
+                font-weight: 300 !important;
+            }
+
+            /* Remove excessive margins from intro texts */
+            .intro-text {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            /* 5. Buttons (Underlined Text Links) */
+            .btn, .cta-button, #hero-minimalist-final .btn {
+                background: transparent !important;
+                color: var(--text-main, #26292a) !important;
+                border: none !important;
+                border-bottom: 1px solid var(--text-main, #26292a) !important;
+                padding: 0 0 4px 0 !important;
+                margin: 0 !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                width: auto !important;
+                display: inline-flex !important;
+                text-transform: uppercase !important;
+                letter-spacing: 1.5px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                justify-content: flex-start !important;
+            }
+
+            /* Hero button needs white text on dark background */
+            #hero-minimalist-final .btn, #services-hero .btn {
+                color: #f3f2e6 !important;
+                border-bottom-color: #f3f2e6 !important;
+            }
+
+            /* Restore Services Hero Button */
+            #services-hero .btn-primary {
+                background-color: #934d34 !important;
+                border: 1px solid #934d34 !important;
+                padding: 12px 22px !important;
+                border-bottom: 1px solid #934d34 !important;
+            }
+            
+            .cta-wrapper {
+                text-align: left !important;
+                margin-top: 10px !important;
+                padding-bottom: 10px !important;
+            }
+
+            /* 6. Image Grids (Horizontal Scroll) */
+            .collections-grid,
+            .blog-grid {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 16px !important;
+                padding-bottom: 20px !important;
+                margin-left: 0 !important;
+                margin-right: -20px !important; /* Bleed out right edge */
+                padding-right: 40px !important; /* Add extra padding so the last item doesn't stick to the edge */
+                width: calc(100% + 20px) !important;
+            }
+            
+            .collections-grid::-webkit-scrollbar,
+            .blog-grid::-webkit-scrollbar {
+                display: none !important;
+            }
+            
+            .collection-card,
+            .blog-card {
+                flex: 0 0 85% !important;
+                scroll-snap-align: start !important;
+                height: auto !important; /* Allow card to adjust to content */
+            }
+
+            /* Fix image ratios */
+            .image-wrapper, .blog-card-image {
+                position: relative !important;
+                display: block !important;
+                overflow: hidden !important;
+                border-radius: 0 !important;
+            }
+            .image-wrapper {
+                padding-bottom: 120% !important; /* Elegant vertical rectangle */
+                height: 0 !important; /* Force padding-bottom to dictate height */
+            }
+            .blog-card-image {
+                height: 250px !important;
+                min-height: 250px !important;
+                max-height: 250px !important;
+                width: 100% !important;
+                object-fit: cover !important;
+            }
+            .image-wrapper img, .collection-image, img.bg-image {
+                height: 100% !important;
+                min-height: 100% !important;
+                max-height: none !important;
+                object-fit: cover !important;
+                width: 100% !important;
+                max-width: none !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                display: block !important;
+                border-radius: 0 !important;
+            }
+
+            /* 7. Manufacturing Section Fixes */
+            #manufacturing-section .capability-row {
+                flex-direction: column !important;
+                gap: 24px !important;
+                margin-bottom: 50px !important;
+            }
+            #manufacturing-section .image-col {
+                height: 350px !important;
+                width: 100% !important; /* Remove bleed to keep 20px breathing room */
+                margin-left: 0 !important; 
+            }
+            #manufacturing-section .text-col {
+                padding: 0 20px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* 8. FAQ specific */
+            .faq-question {
+                font-size: 16px !important;
+                padding: 20px !important;
+                align-items: center !important;
+            }
+            .faq-answer {
+                padding: 0 20px !important;
+            }
+                } /* End of @media (max-width: 768px) */
+
+                /* 9. Mobile Hero Centering Only */
+        @media (max-width: 768px) {
+
+        [id$="-hero"] .btn-group,
+        #hero-minimalist-final .btn-group {
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+        [id$="-hero"] .content-container,
+        #hero-minimalist-final .content-container {
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        [id$="-hero"] .text-content,
+        #hero-minimalist-final .text-content {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+
+        [id$="-hero"] h1,
+        #hero-minimalist-final h1,
+        [id$="-hero"] .sub-text,
+        #hero-minimalist-final .sub-text,
+        [id$="-hero"] .pre-header,
+        #hero-minimalist-final .pre-header {
+            text-align: center !important;
+        }
+
+        [id$="-hero"] .breadcrumb,
+        #hero-minimalist-final .breadcrumb {
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        [id$="-hero"] .btn,
+        #hero-minimalist-final .btn,
+        [id$="-hero"] .btn-primary,
+        #hero-minimalist-final .btn-primary {
+            justify-content: center !important;
+            margin: 0 auto !important;
+            display: inline-flex !important;
+        }
+    
+        }
+    </style>
+
+<script>
+    (function() {
+        const section = document.getElementById('why-fursone-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = section.querySelectorAll('.feature-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const grid = section.querySelector('.feature-grid');
+        if (grid) {
+            const items = section.querySelectorAll('.feature-item');
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            observer.observe(grid);
+        }
+    })();
+    </script>

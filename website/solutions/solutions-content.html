@@ -1,0 +1,1383 @@
+<section id="solutions-hero">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Fabric Sourcing Solutions from Fursone Wenzhou",
+      "description": "Tailored fabric sourcing solutions for designer brands, garment factories, and textile wholesalers from a direct Wenzhou textile manufacturer.",
+      "breadcrumb": "Home > Solutions"
+    }
+    </script>
+
+    <style>
+        #solutions-hero {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            min-height: 600px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            color: #f3f2e6;
+            background-color: #26292a;
+        }
+        #solutions-hero img.bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+        #solutions-hero .overlay-gradient {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(38, 41, 42, 0.95) 0%, rgba(38, 41, 42, 0.8) 40%, rgba(38, 41, 42, 0.4) 100%);
+            z-index: 1;
+        }
+        #solutions-hero .breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-body, 'Playfair', serif);
+            margin-bottom: 8px;
+        }
+        #solutions-hero .breadcrumb a {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: rgba(243, 242, 230, 0.6);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        #solutions-hero .breadcrumb a:hover {
+            color: #f3f2e6;
+        }
+        #solutions-hero .breadcrumb span {
+            font-size: 10px;
+            color: rgba(243, 242, 230, 0.4);
+        }
+        #solutions-hero .content-container {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1600px;
+            margin: 0 auto;
+            padding-left: 100px;
+            padding-right: 40px;
+            display: flex;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+        #solutions-hero .text-content {
+            max-width: 800px;
+            animation: solFadeInMove 1s ease-out forwards;
+        }
+        #solutions-hero .pre-header {
+            display: block;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            opacity: 0.95;
+            border-left: 3px solid #ffffff;
+            padding-left: 18px;
+            text-transform: uppercase;
+            color: #f9f9f9;
+        }
+        #solutions-hero h1 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: clamp(32px, 4.2vw, 52px);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 30px;
+            text-shadow: 0 5px 20px rgba(38, 41, 42, 0.5);
+            color: #f3f2e6;
+        }
+        #solutions-hero .sub-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            color: #f3f2e6;
+            font-weight: 400;
+            max-width: 650px;
+        }
+        #solutions-hero .btn {
+            padding: 16px 40px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        #solutions-hero .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #solutions-hero .btn-primary:hover {
+            background-color: transparent;
+            color: #f3f2e6;
+            border-color: #ffffff;
+        }
+        #solutions-hero .solution-paths {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+            max-width: 680px;
+        }
+        #solutions-hero .solution-path {
+            min-height: 44px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 14px;
+            border: 1px solid rgba(243, 242, 230, 0.24);
+            background: rgba(243, 242, 230, 0.08);
+            color: #f3f2e6;
+            text-decoration: none;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.8px;
+            text-transform: uppercase;
+            transition: all 0.25s ease;
+        }
+        #solutions-hero .solution-path:hover {
+            background: rgba(243, 242, 230, 0.16);
+            border-color: rgba(243, 242, 230, 0.45);
+        }
+        @keyframes solFadeInMove {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 768px) {
+            #solutions-hero {
+                height: auto !important;
+                min-height: 74svh !important;
+                padding: 108px 0 64px !important;
+                align-items: center;
+            }
+            #solutions-hero img.bg-image {
+                object-position: center bottom !important;
+            }
+            #solutions-hero .overlay-gradient {
+                background: rgba(38, 41, 42, 0.78);
+            }
+            #solutions-hero .breadcrumb {
+                display: none !important;
+            }
+            #solutions-hero .content-container {
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+                justify-content: center;
+                text-align: center;
+            }
+            #solutions-hero .text-content {
+                max-width: 100%;
+            }
+            #solutions-hero .pre-header {
+                border-left: none;
+                padding-left: 0;
+                margin-bottom: 12px;
+                font-size: 10px !important;
+                letter-spacing: 1.6px !important;
+            }
+            #solutions-hero h1 {
+                font-size: 24px !important;
+                line-height: 1.14 !important;
+                margin-bottom: 14px !important;
+                letter-spacing: -0.5px;
+                text-shadow: 0 2px 10px rgba(38, 41, 42, 0.3);
+            }
+            #solutions-hero .sub-text {
+                max-width: 100%;
+                font-size: 13px !important;
+                line-height: 1.45 !important;
+                margin-bottom: 20px !important;
+            }
+            #solutions-hero .btn {
+                padding: 12px 24px !important;
+                font-size: 11px !important;
+                font-weight: 600 !important;
+            }
+            #solutions-hero .solution-paths {
+                justify-content: center;
+                gap: 8px;
+                margin-top: 16px;
+            }
+            #solutions-hero .solution-path {
+                font-size: 10px;
+                padding: 10px 12px;
+            }
+        }
+    </style>
+
+    <img class="bg-image" src="https://fursone.com/wp-content/uploads/2026/04/chanel-style-boucle-tweed-fabric-wholesale-001.jpg" width="1920" height="1080" alt="Fabric sourcing solutions from Wenzhou textile manufacturer Fursone for designer brands garment factories and wholesalers">
+    <div class="overlay-gradient"></div>
+
+    <div class="content-container">
+        <div class="text-content">
+            <nav class="breadcrumb">
+                <a href="/">Home</a>
+                <span>/</span>
+                <span>Solutions</span>
+            </nav>
+            <span class="pre-header">Buyer-Type Sourcing Paths</span>
+            <h1>Choose the sourcing route that matches your business model.</h1>
+            <p class="sub-text">Start with the path built for designer brands, garment factories, or fabric wholesalers—then move into the MOQ and delivery model that fits.</p>
+            <a href="#solutions-cards" class="btn btn-primary">Find Your Solution</a>
+            <div class="solution-paths" aria-label="Buyer type paths">
+                <a href="/solutions/designer-brands/" class="solution-path">Designer Brands</a>
+                <a href="/solutions/garment-factories/" class="solution-path">Garment Factories</a>
+                <a href="/solutions/fabric-wholesalers/" class="solution-path">Wholesalers</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var content = document.querySelector('#solutions-hero .text-content');
+        if (!content) return;
+        var handler = function() {
+            var scrolled = window.scrollY;
+            var opacity = 1 - (scrolled / 500);
+            if (opacity < 0) opacity = 0;
+            content.style.opacity = opacity;
+        };
+        window.addEventListener('scroll', handler, { passive: true });
+    })();
+    </script>
+</section>
+
+
+<section id="solutions-cards">
+    <style>
+        #solutions-cards {
+            background-color: var(--bg-primary, #f3f2e6);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #solutions-cards .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        #solutions-cards .header-section {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        #solutions-cards .section-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 15px;
+            display: block;
+        }
+        #solutions-cards h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 36px;
+            font-weight: 400;
+            line-height: 1.2;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+        }
+        #solutions-cards .header-intro {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            max-width: 700px;
+            margin: 0 auto;
+            opacity: 0.85;
+            font-weight: 300;
+        }
+        #solutions-cards .sol-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        @media (max-width: 1024px) {
+            #solutions-cards .sol-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 768px) {
+            #solutions-cards .sol-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        #solutions-cards .sol-card {
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(38, 41, 42, 0.08);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        #solutions-cards .sol-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(38, 41, 42, 0.15);
+        }
+        #solutions-cards .card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        #solutions-cards .sol-card:hover .card-image {
+            transform: scale(1.08);
+        }
+        #solutions-cards .card-content {
+            padding: 35px 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        #solutions-cards .card-number {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 48px;
+            font-weight: 400;
+            color: var(--cta-button, #934d34);
+            opacity: 0.15;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+        #solutions-cards .card-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 8px;
+            display: block;
+        }
+        #solutions-cards .card-content h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main, #26292a);
+            margin: 0 0 12px 0;
+        }
+        #solutions-cards .card-content p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.85;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+        #solutions-cards .btn {
+            padding: 12px 30px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+            width: fit-content;
+        }
+        #solutions-cards .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #solutions-cards .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+    </style>
+
+    <div class="container">
+        <div class="header-section">
+            <span class="section-label">Solutions by Business Type</span>
+            <h2>Fabric Sourcing Solutions from a China Textile Factory</h2>
+            <p class="header-intro">Every business has unique sourcing needs. Whether you need custom development, bulk supply, or wholesale inventory — find the solution built for your business model.</p>
+        </div>
+        <div class="sol-grid">
+            <div class="sol-card">
+                <img class="card-image" src="https://fursone.com/wp-content/uploads/2026/04/chanel-style-boucle-tweed-fabric-wholesale-005.jpg" width="600" height="400" loading="lazy" alt="Fabric sourcing solution for designer brands from Wenzhou textile manufacturer Fursone">
+                <div class="card-content">
+                    <div class="card-number">01</div>
+                    <span class="card-label">Persona</span>
+                    <h3>For Designer Brands</h3>
+                    <p>Develop exclusive signature fabrics with a trusted OEM manufacturer. Full IP protection, fancy yarn development, and low MOQ options starting from 100 meters for sampling.</p>
+                    <a href="/solutions/designer-brands/" class="btn btn-primary">Get Custom Quote</a>
+                </div>
+            </div>
+            <div class="sol-card">
+                <img class="card-image" src="https://fursone.com/wp-content/uploads/2026/04/jacquard-knit-fabric-manufacturer-010.jpg" width="600" height="400" loading="lazy" alt="Fabric supply solution for garment factories from Wenzhou China textile manufacturer Fursone">
+                <div class="card-content">
+                    <div class="card-number">02</div>
+                    <span class="card-label">Persona</span>
+                    <h3>For Garment Factories</h3>
+                    <p>Reliable bulk fabric supply from a Wenzhou manufacturer. 72-hour dispatch on stock items, consistent quality across re-orders, and competitive pricing for production runs.</p>
+                    <a href="/solutions/garment-factories/" class="btn btn-primary">Check Stock Availability</a>
+                </div>
+            </div>
+            <div class="sol-card">
+                <img class="card-image" src="https://fursone.com/wp-content/uploads/2026/04/premium-textile-fabric-wholesale-003.jpg" width="600" height="400" loading="lazy" alt="Textile wholesale solution for fabric distributors from Wenzhou China factory Fursone">
+                <div class="card-content">
+                    <div class="card-number">03</div>
+                    <span class="card-label">Persona</span>
+                    <h3>For Fabric Wholesalers</h3>
+                    <p>Expand your catalog with 100+ in-stock SKUs or develop exclusive wholesale lines through custom manufacturing. Re-order with 95% consistency.</p>
+                    <a href="/solutions/fabric-wholesalers/" class="btn btn-primary">Request Wholesale Pricing</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="solutions-advantage">
+    <style>
+        #solutions-advantage {
+            background-color: var(--bg-secondary, #d9d5c9);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #solutions-advantage .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+        #solutions-advantage .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: stretch;
+        }
+        #solutions-advantage .section-label {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 15px;
+            display: block;
+        }
+        #solutions-advantage h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 38px;
+            line-height: 1.2;
+            color: var(--text-main, #26292a);
+            margin-bottom: 40px;
+            font-weight: 400;
+        }
+        #solutions-advantage .intro-text {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            margin-bottom: 45px;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        #solutions-advantage .approach-list {
+            display: flex;
+            flex-direction: column;
+            gap: 35px;
+            margin-bottom: 50px;
+        }
+        #solutions-advantage .approach-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            border-left: 3px solid rgba(38, 41, 42, 0.15);
+            padding-left: 25px;
+        }
+        #solutions-advantage .approach-item:last-child {
+            border-left-color: var(--cta-button, #934d34);
+        }
+        #solutions-advantage .approach-icon {
+            width: 45px;
+            height: 45px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 8px;
+        }
+        #solutions-advantage .approach-icon svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--cta-button, #934d34);
+        }
+        #solutions-advantage .approach-content h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--text-main, #26292a);
+            margin: 0 0 6px 0;
+        }
+        #solutions-advantage .approach-content p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.8;
+            margin: 0;
+            font-weight: 300;
+        }
+        #solutions-advantage .btn {
+            padding: 14px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+            width: fit-content;
+        }
+        #solutions-advantage .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #solutions-advantage .btn-primary:hover {
+            background-color: transparent;
+            color: var(--cta-button, #934d34);
+            border-color: var(--cta-button, #934d34);
+        }
+        #solutions-advantage .visual-side img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(38, 41, 42, 0.1);
+        }
+        #solutions-advantage .visual-side .stats-badge {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #ffffff;
+            padding: 15px 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(38, 41, 42, 0.06);
+            margin-top: 20px;
+        }
+        #solutions-advantage .visual-side .stats-badge svg {
+            width: 24px;
+            height: 24px;
+            fill: var(--cta-button, #934d34);
+            flex-shrink: 0;
+        }
+        #solutions-advantage .visual-side .stats-badge span {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 13px;
+            font-weight: 400;
+            color: var(--text-main, #26292a);
+        }
+        #solutions-advantage .visual-side .stats-badge strong {
+            font-weight: 600;
+            color: var(--cta-button, #934d34);
+        }
+        @media (max-width: 1024px) {
+            #solutions-advantage .content-wrapper { grid-template-columns: 1fr; gap: 40px; }
+            #solutions-advantage .visual-side { order: -1; }
+        }
+    </style>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <div>
+                <span class="section-label">Strategic Partnership</span>
+                <h2>More Than Fabric — A Strategic Sourcing Asset</h2>
+                <p class="intro-text">We understand that fabric is the foundation of your business. Our solutions are designed to optimize your sourcing process, ensuring consistency, quality, and speed.</p>
+                <div class="approach-list">
+                    <div class="approach-item">
+                        <div class="approach-icon">
+                            <svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                        </div>
+                        <div class="approach-content">
+                            <h3>Style Consistency</h3>
+                            <p>Our 1,000-meter MOQ ensures specialty yarns remain stable across your entire collection, avoiding style drift between production batches.</p>
+                        </div>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">
+                            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                        </div>
+                        <div class="approach-content">
+                            <h3>Factory-Direct Pricing</h3>
+                            <p>As a vertical Wenzhou manufacturer, we eliminate middlemen. You get premium quality at direct-from-factory prices.</p>
+                        </div>
+                    </div>
+                    <div class="approach-item">
+                        <div class="approach-icon">
+                            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        </div>
+                        <div class="approach-content">
+                            <h3>End-to-End Service</h3>
+                            <p>From yarn sourcing to finished fabric, we manage the entire production journey. DDP shipping available to USA, Europe, and Asia.</p>
+                        </div>
+                    </div>
+                </div>
+                <a href="#contact" class="btn btn-primary">Talk to a Sourcing Specialist</a>
+            </div>
+            <div class="visual-side">
+                <img src="https://fursone.com/wp-content/uploads/2026/04/jacquard-knit-fabric-manufacturer-001.jpg" width="800" height="530" loading="lazy" alt="Strategic fabric sourcing partnership with Wenzhou textile manufacturer Fursone factory China">
+                <div class="stats-badge">
+                    <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                    <span><strong>500+ brands</strong> in <strong>50+ countries</strong> trust our Wenzhou factory for fabric sourcing</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="solutions-faq">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does Fursone support small fashion brands?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We support emerging brands with high-end fabric alternatives starting at 100 meters for in-stock items. This allows designers to access luxury-grade textures for prototypes without industrial order minimums."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer exclusive design rights for wholesalers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. For qualified partners, we develop exclusive patterns protected for your brand or territory. Our specialty yarn R&D makes us the ideal partner for unique collections."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Why is the custom MOQ 1,000 meters?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "To ensure stability of specialty yarns like bouclé and slub, a 1,000-meter threshold is required for custom developments. This ensures intricate textures remain uniform throughout the entire production run."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can garment factories rely on consistent re-order quality?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We maintain detailed配方 archives for every custom development. Re-orders achieve 95%+ consistency in color, texture, and hand feel."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <style>
+        #solutions-faq {
+            background-color: var(--bg-primary, #f3f2e6);
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        #solutions-faq .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #solutions-faq h2 {
+            font-family: var(--font-heading, 'Playfair Display', serif);
+            font-size: 32px;
+            line-height: 1.3;
+            color: var(--text-main, #26292a);
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-align: center;
+        }
+        #solutions-faq .section-subtitle {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--cta-button, #934d34);
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        #solutions-faq .faq-list {
+            width: 100%;
+            margin-bottom: 50px;
+        }
+        #solutions-faq .faq-columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            align-items: start;
+            gap: 20px;
+            width: 100%;
+        }
+        #solutions-faq .faq-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #solutions-faq .faq-item {
+            background: #ffffff;
+            border: 1px solid rgba(38, 41, 42, 0.1);
+            transition: all 0.3s ease;
+            height: auto; /* Allow items to size naturally based on content */
+            align-self: start; /* CRITICAL FIX: prevents stretching to row height */
+        }
+        #solutions-faq .faq-item:hover {
+            border-color: var(--cta-button, #934d34);
+            box-shadow: 0 8px 24px rgba(38, 41, 42, 0.08);
+        }
+        #solutions-faq .faq-item.active {
+            border-color: var(--cta-button, #934d34);
+            box-shadow: 0 12px 32px rgba(38, 41, 42, 0.1);
+        }
+        #solutions-faq .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            user-select: none;
+        }
+        #solutions-faq .faq-question h3 {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-main, #26292a);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        #solutions-faq .faq-toggle {
+            width: 28px; height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(38, 41, 42, 0.2);
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            flex-shrink: 0;
+            margin-left: 20px;
+        }
+        #solutions-faq .faq-item.active .faq-toggle {
+            background-color: var(--cta-button, #934d34);
+            border-color: var(--cta-button, #934d34);
+            transform: rotate(45deg);
+        }
+        #solutions-faq .faq-toggle svg {
+            width: 14px; height: 14px;
+            fill: var(--text-main, #26292a);
+            transition: fill 0.3s ease;
+        }
+        #solutions-faq .faq-item.active .faq-toggle svg {
+            fill: var(--cta-text, #f3f2e6);
+        }
+        #solutions-faq .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        #solutions-faq .faq-item.active .faq-answer {
+            max-height: 350px;
+        }
+        #solutions-faq .faq-answer p {
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--text-main, #26292a);
+            opacity: 0.9;
+            font-weight: 300;
+            margin: 0;
+            padding: 0 30px 30px 30px;
+        }
+        #solutions-faq .faq-answer p strong {
+            font-weight: 600;
+        }
+        #solutions-faq .cta-wrapper {
+            text-align: center;
+        }
+        #solutions-faq .btn {
+            padding: 14px 35px;
+            font-family: var(--font-body, 'Playfair', serif);
+            font-size: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 1.5px;
+            border-radius: 0;
+            text-align: center;
+            white-space: nowrap;
+            text-transform: uppercase;
+            cursor: pointer;
+            display: inline-block;
+        }
+        #solutions-faq .btn-primary {
+            background-color: #934d34;
+            color: #f3f2e6;
+            border: 1px solid #934d34;
+        }
+        #solutions-faq .btn-primary:hover {
+            background-color: transparent;
+            color: var(--text-main, #26292a);
+            border-color: var(--text-main, #26292a);
+        }
+        @media (max-width: 768px) {
+            #solutions-hero .content-container,
+            #solutions-cards .container,
+            #solutions-advantage .container,
+            #solutions-faq .container {
+                padding-left: 24px !important;
+                padding-right: 24px !important;
+                box-sizing: border-box !important;
+            }
+            #solutions-hero h1,
+            #solutions-cards h2,
+            #solutions-advantage h2,
+            #solutions-faq h2 {
+                font-size: 30px !important;
+                line-height: 1.25 !important;
+            }
+            #solutions-hero .sub-text,
+            #solutions-cards p,
+            #solutions-advantage p,
+            #solutions-faq .faq-answer p {
+                font-size: 17px !important;
+                line-height: 1.7 !important;
+            }
+            #solutions-faq .section-subtitle {
+                font-size: 13px !important;
+                letter-spacing: 1.2px !important;
+            }
+            #solutions-faq .faq-columns {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            #solutions-faq .faq-column {
+                gap: 15px;
+            }
+            #solutions-faq .faq-question {
+                padding: 20px 22px;
+            }
+            #solutions-faq .faq-question h3 {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+            }
+            #solutions-faq .faq-answer p {
+                padding: 0 22px 22px;
+            }
+            #solutions-hero .btn,
+            #solutions-cards .btn,
+            #solutions-advantage .btn,
+            #solutions-faq .btn {
+                display: inline-flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                width: auto !important;
+                padding: 12px 22px !important;
+                font-size: 13px !important;
+                letter-spacing: 1.2px !important;
+                background-color: #934d34 !important;
+                color: #f3f2e6 !important;
+                border: 1px solid #934d34 !important;
+            }
+            #solutions-faq .btn:hover {
+                background-color: transparent !important;
+                color: var(--text-main, #26292a) !important;
+                border: 1px solid var(--text-main, #26292a) !important;
+                border-bottom: none !important;
+            }
+        }
+    </style>
+
+    <div class="container">
+        <h2>Common Questions About Fabric Sourcing from China</h2>
+        <p class="section-subtitle">Get the Answers You Need</p>
+
+        <div class="faq-list">
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>How does Fursone support small fashion brands?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>We support emerging brands with high-end fabric alternatives starting at <strong>100 meters</strong> for in-stock items. This allows designers to access luxury-grade textures for prototypes without industrial order minimums.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Do you offer exclusive design rights for wholesalers?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. For qualified partners, we develop exclusive patterns protected for your brand or territory. Our specialty yarn R&D makes us the ideal partner for unique collections.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Why is the custom MOQ 1,000 meters?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>To ensure stability of specialty yarns like bouclé and slub, a <strong>1,000-meter threshold</strong> is required for custom developments. This ensures intricate textures remain uniform throughout the entire production run.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">
+                    <h3>Can garment factories rely on consistent re-order quality?</h3>
+                    <div class="faq-toggle">
+                        <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+                    </div>
+                </div>
+                <div class="faq-answer">
+                    <p>Yes. We maintain detailed archives for every custom development. Re-orders achieve <strong>95%+ consistency</strong> in color, texture, and hand feel across batches.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="cta-wrapper">
+            <a href="#contact" class="btn btn-primary">Contact Our Sourcing Team</a>
+        </div>
+    </div>
+
+    <script>
+    (function() {
+        var section = document.getElementById('solutions-faq');
+        var items = section.querySelectorAll('.faq-item');
+        var faqList = section.querySelector('.faq-list');
+
+        function syncFaqColumns() {
+            if (!faqList) return;
+
+            var existingColumns = faqList.querySelector('.faq-columns');
+
+            if (window.innerWidth <= 768) {
+                if (existingColumns) {
+                    Array.from(existingColumns.querySelectorAll('.faq-item'))
+                        .sort(function(a, b) {
+                            return Number(a.dataset.faqOrder) - Number(b.dataset.faqOrder);
+                        })
+                        .forEach(function(item) {
+                            faqList.appendChild(item);
+                        });
+
+                    existingColumns.remove();
+                }
+
+                return;
+            }
+
+            var directItems = Array.from(faqList.querySelectorAll(':scope > .faq-item'));
+            if (!directItems.length) return;
+
+            directItems.forEach(function(item, index) {
+                item.dataset.faqOrder = String(index + 1);
+            });
+
+            var columns = document.createElement('div');
+            columns.className = 'faq-columns';
+
+            var leftColumn = document.createElement('div');
+            leftColumn.className = 'faq-column';
+
+            var rightColumn = document.createElement('div');
+            rightColumn.className = 'faq-column';
+
+            directItems.forEach(function(item, index) {
+                (index % 2 === 0 ? leftColumn : rightColumn).appendChild(item);
+            });
+
+            columns.appendChild(leftColumn);
+            columns.appendChild(rightColumn);
+            faqList.appendChild(columns);
+        }
+
+        syncFaqColumns();
+        window.addEventListener('resize', syncFaqColumns);
+
+        items.forEach(function(item) {
+            var q = item.querySelector('.faq-question');
+            q.addEventListener('click', function() {
+                var wasActive = item.classList.contains('active');
+                // Close all items
+                items.forEach(function(i) { 
+                    i.classList.remove('active'); 
+                });
+                // Toggle current item
+                if (!wasActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    items.forEach(function(item, index) {
+                        setTimeout(function() {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 80);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        var list = section.querySelector('.faq-list');
+        if (list) {
+            items.forEach(function(item) {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            });
+            observer.observe(list);
+        }
+    })();
+    </script>
+</section>
+
+<!-- FURSONE GLOBAL MOBILE OVERRIDES (EvergoCasa Minotti Standards) -->
+    <style>
+        @media (max-width: 768px) {
+            /* 1. Global Box Sizing & Body */
+            html, body {
+                overflow-x: hidden !important;
+                width: 100% !important;
+            }
+            * {
+                box-sizing: border-box !important;
+            }
+
+            /* 2. Container Safety Margins */
+            #hero-minimalist-final .content-container,
+            .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 auto !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 3. Section Breathing Room */
+            section {
+                padding: 50px 0 60px 0 !important;
+                margin: 0 !important;
+                overflow-x: hidden !important;
+            }
+            
+            /* Exceptions for full-bleed or hero */
+            #hero-minimalist-final {
+                padding: 0 !important;
+                height: 100svh !important;
+                min-height: 550px !important;
+            }
+            #why-fursone-section .container,
+            #b2b-split-slider .container {
+                padding-left: 20px !important;
+                padding-right: 20px !important;
+            }
+            #why-fursone-section .text-column,
+            #b2b-split-slider .right-content {
+                padding: 30px 20px 0 20px !important;
+                box-sizing: border-box !important;
+            }
+
+            /* 4. Typography Hierarchy (Minotti Style) */
+            h1 {
+                font-size: 32px !important;
+                line-height: 1.15 !important;
+                margin-bottom: 20px !important;
+                text-align: left !important;
+            }
+            
+            h2 {
+                font-size: 28px !important;
+                line-height: 1.25 !important;
+                margin-top: 0 !important;
+                margin-bottom: 16px !important;
+                text-align: left !important;
+            }
+
+            h3 {
+                font-size: 18px !important;
+                line-height: 1.4 !important;
+                margin-bottom: 8px !important;
+            }
+
+            p, .intro-text, .sub-text, .faq-answer p, .blog-excerpt, #why-fursone-section .feature-item p {
+                font-size: 16px !important;
+                line-height: 1.6 !important;
+                margin-bottom: 24px !important;
+                text-align: left !important;
+                opacity: 0.85 !important;
+                font-weight: 300 !important;
+            }
+
+            /* Remove excessive margins from intro texts */
+            .intro-text {
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+
+            /* 5. Buttons (Underlined Text Links) */
+            .btn, .cta-button, #hero-minimalist-final .btn {
+                background: transparent !important;
+                color: var(--text-main, #26292a) !important;
+                border: none !important;
+                border-bottom: 1px solid var(--text-main, #26292a) !important;
+                padding: 0 0 4px 0 !important;
+                margin: 0 !important;
+                font-size: 12px !important;
+                font-weight: 600 !important;
+                width: auto !important;
+                display: inline-flex !important;
+                text-transform: uppercase !important;
+                letter-spacing: 1.5px !important;
+                border-radius: 0 !important;
+                box-shadow: none !important;
+                justify-content: flex-start !important;
+            }
+
+            /* Hero button needs white text on dark background */
+            #hero-minimalist-final .btn, #solutions-hero .btn {
+                color: #f3f2e6 !important;
+                border-bottom-color: #f3f2e6 !important;
+            }
+
+            /* Restore Solutions Hero Button */
+            #solutions-hero .btn-primary {
+                background-color: #934d34 !important;
+                border: 1px solid #934d34 !important;
+                padding: 12px 22px !important;
+                border-bottom: 1px solid #934d34 !important;
+            }
+            
+            .cta-wrapper {
+                text-align: left !important;
+                margin-top: 10px !important;
+                padding-bottom: 10px !important;
+            }
+
+            /* 6. Image Grids (Horizontal Scroll) */
+            .collections-grid,
+            .blog-grid {
+                display: flex !important;
+                flex-wrap: nowrap !important;
+                overflow-x: auto !important;
+                scroll-snap-type: x mandatory !important;
+                gap: 16px !important;
+                padding-bottom: 20px !important;
+                margin-left: 0 !important;
+                margin-right: -20px !important; /* Bleed out right edge */
+                padding-right: 40px !important; /* Add extra padding so the last item doesn't stick to the edge */
+                width: calc(100% + 20px) !important;
+            }
+            
+            .collections-grid::-webkit-scrollbar,
+            .blog-grid::-webkit-scrollbar {
+                display: none !important;
+            }
+            
+            .collection-card,
+            .blog-card {
+                flex: 0 0 85% !important;
+                scroll-snap-align: start !important;
+                height: auto !important; /* Allow card to adjust to content */
+            }
+
+            /* Fix image ratios */
+            .image-wrapper, .blog-card-image {
+                position: relative !important;
+                display: block !important;
+                overflow: hidden !important;
+                border-radius: 0 !important;
+            }
+            .image-wrapper {
+                padding-bottom: 120% !important; /* Elegant vertical rectangle */
+                height: 0 !important; /* Force padding-bottom to dictate height */
+            }
+            .blog-card-image {
+                height: 250px !important;
+                min-height: 250px !important;
+                max-height: 250px !important;
+                width: 100% !important;
+                object-fit: cover !important;
+            }
+            .image-wrapper img, .collection-image, img.bg-image {
+                height: 100% !important;
+                min-height: 100% !important;
+                max-height: none !important;
+                object-fit: cover !important;
+                width: 100% !important;
+                max-width: none !important;
+                position: absolute !important;
+                top: 0 !important;
+                left: 0 !important;
+                right: 0 !important;
+                bottom: 0 !important;
+                display: block !important;
+                border-radius: 0 !important;
+            }
+
+            /* 7. Manufacturing Section Fixes */
+            #manufacturing-section .capability-row {
+                flex-direction: column !important;
+                gap: 24px !important;
+                margin-bottom: 50px !important;
+            }
+            #manufacturing-section .image-col {
+                height: 350px !important;
+                width: 100% !important; /* Remove bleed to keep 20px breathing room */
+                margin-left: 0 !important; 
+            }
+            #manufacturing-section .text-col {
+                padding: 0 20px !important;
+                box-sizing: border-box !important;
+            }
+            
+            /* 8. FAQ specific */
+            .faq-question {
+                font-size: 16px !important;
+                padding: 20px !important;
+                align-items: center !important;
+            }
+            .faq-answer {
+                padding: 0 20px !important;
+            }
+                } /* End of @media (max-width: 768px) */
+
+                /* 9. Mobile Hero Centering Only */
+        @media (max-width: 768px) {
+
+        [id$="-hero"] .btn-group,
+        #hero-minimalist-final .btn-group {
+            align-items: center !important;
+            justify-content: center !important;
+            width: 100% !important;
+        }
+        [id$="-hero"] .content-container,
+        #hero-minimalist-final .content-container {
+            justify-content: center !important;
+            align-items: center !important;
+        }
+
+        [id$="-hero"] .text-content,
+        #hero-minimalist-final .text-content {
+            display: flex !important;
+            flex-direction: column !important;
+            align-items: center !important;
+            text-align: center !important;
+            margin: 0 auto !important;
+        }
+
+        [id$="-hero"] h1,
+        #hero-minimalist-final h1,
+        [id$="-hero"] .sub-text,
+        #hero-minimalist-final .sub-text,
+        [id$="-hero"] .pre-header,
+        #hero-minimalist-final .pre-header {
+            text-align: center !important;
+        }
+
+        [id$="-hero"] .breadcrumb,
+        #hero-minimalist-final .breadcrumb {
+            justify-content: center !important;
+            width: 100% !important;
+        }
+
+        [id$="-hero"] .btn,
+        #hero-minimalist-final .btn,
+        [id$="-hero"] .btn-primary,
+        #hero-minimalist-final .btn-primary {
+            justify-content: center !important;
+            margin: 0 auto !important;
+            display: inline-flex !important;
+        }
+    
+        }
+    </style>
+
+<script>
+    (function() {
+        const section = document.getElementById('why-fursone-section');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const items = section.querySelectorAll('.feature-item');
+                    items.forEach((item, index) => {
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const grid = section.querySelector('.feature-grid');
+        if (grid) {
+            const items = section.querySelectorAll('.feature-item');
+            items.forEach(item => {
+                item.style.opacity = '0';
+                item.style.transform = 'translateY(20px)';
+                item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            });
+            observer.observe(grid);
+        }
+    })();
+    </script>
